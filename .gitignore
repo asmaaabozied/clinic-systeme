@@ -1,0 +1,21 @@
+# IDEs and editors
+.idea/
+.vscode/
+
+# Laravel specific
+/vendor/
+node_modules/
+.env
+.phpunit.result.cache
+/storage/
+bootstrap/cache/
+
+# OS specific
+.DS_Store
+Thumbs.db
+
+# Optional: ignore log files
+/storage/logs/*.log
+
+# Optional: ignore compiled views
+/storage/framework/views/*
