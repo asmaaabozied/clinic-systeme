@@ -1,0 +1,12 @@
+{
+  "name": "Clinic",
+  "alias": "clinic",
+  "description": "Clinic Module",
+  "keywords": [],
+  "active": true,
+  "providers": [
+    "Modules\\Clinic\\Providers\\ClinicServiceProvider"
+  ],
+  "files": [],
+  "requires": []
+}

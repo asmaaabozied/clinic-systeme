@@ -1,0 +1,56 @@
+body {
+  direction: rtl;
+  text-align: right;
+}
+
+@font-face {
+  font-family: "Cairo";
+  src: url(../fonts/Cairo.ttf);
+  font-weight: normal;
+  font-style: normal;
+}
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Cairo", sans-serif;
+}
+
+.header .navbar .navbar-nav .dropdown-toggle::after {
+  margin-left: unset;
+  margin-right: 1em;
+}
+
+.dropdown-item {
+  text-align: start;
+}
+
+.main-section .search-card .custom-select::after {
+  right: unset;
+  left: 24px;
+}
+
+.border-right-1 {
+  border-left: 1px solid rgb(81, 81, 81);
+  border-right: unset;
+}
+
+.form-check .form-check-input {
+  float: right;
+  margin-right: -1.5em;
+  margin-left: unset;
+}
+
+.form-check {
+  padding-right: 1.5em;
+  padding-left: unset;
+}
+
+.form-check-input[type=checkbox]:checked:after {
+  margin-left: unset;
+  margin-right: 0.25rem;
+}
+
+.accordion-button::after {
+  margin-right: auto;
+  margin-left: unset !important;
+}

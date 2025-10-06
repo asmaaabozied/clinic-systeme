@@ -1,0 +1,82 @@
+
+
+
+@media (max-width: 991px) {
+    .header .navbar .navbar-collapse {
+        height: auto;
+    }
+    .header .navbar .navbar-nav .nav-item {
+        flex-direction: column;
+        width: 100%;
+    }
+    .navbar-full .dropdown-menu {
+        position: relative !important;
+    }
+    .country-section img.map {
+        width: 100%;
+    }
+    .header .navbar .sec-two {
+        justify-content: center;
+    }
+  
+
+}
+
+@media (max-width: 767.98px) {
+    /* Styles for devices between 576px and 768px */
+    .main-section h2 {
+        font-size: var(--bs-font-32);
+    }
+    
+    .main-section .search-card .custom-select {
+        margin-bottom: 1rem;
+    }
+    .card-features {
+        margin-bottom: 1rem;
+    }
+    .Testimonials-section .testimonials-card {
+        margin-bottom: 1rem;
+    }
+.getApp{
+   a img{    width: 120px !important;}
+}
+.footer .copyright{
+    .col-md-3 {
+        margin-top: 1rem;
+    }
+    .linkes{
+        margin-top: 1rem;
+       a {
+            font-size: var(--bs-font-12);
+        }
+    }
+} 
+.about-card .title {
+    font-size: var(--bs-font-32);
+    line-height: 40px;
+}
+.lead-btn {
+    font-size: var(--bs-font-18);
+}
+.btn-primary-light ,.btn-grad {
+    font-size:var(--bs-font-12);
+}
+.w-200 {
+    width: 130px;
+}
+.mob-col{
+    flex-direction: column;
+}
+.uic-card{
+    flex-direction: column;
+    gap: 1rem !important;
+}
+.lock-img{
+    width:100% !important;
+}
+}
+@media (min-width: 576px) and (max-width: 767.98px) {
+}
+@media (max-width: 575.98px) {
+    /* Styles for devices less than 576px wide */
+}

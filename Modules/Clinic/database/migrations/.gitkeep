@@ -1,0 +1,50 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+class CreateClinicTables extends Migration
+{
+    public function up()
+    {
+        // جدول الدكاترة
+        Schema::create('doctors', function (Blueprint $table) {
+            $table->id();
+            $table->unsignedBigInteger('user_id')->unique(); // رابط لجدول users
+            $table->string('specialty')->nullable();          // التخصص بتاع الدكتور
+            $table->timestamps();
+
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+        });
+
+        // جدول الريسيبشن
+        Schema::create('receptionists', function (Blueprint $table) {
+            $table->id();
+            $table->unsignedBigInteger('user_id')->unique(); // رابط لجدول users
+            $table->timestamps();
+
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+        });
+
+        // جدول المرضى
+        Schema::create('patients', function (Blueprint $table) {
+            $table->id();
+            $table->string('name');
+            $table->unsignedBigInteger('doctor_id');   // رابط للدكتور المسؤول
+            $table->unsignedBigInteger('receptionist_id')->nullable();  // رابط للرسيبشن (اختياري)
+            $table->string('disease')->nullable();
+            $table->timestamps();
+
+            $table->foreign('doctor_id')->references('id')->on('doctors')->onDelete('cascade');
+            $table->foreign('receptionist_id')->references('id')->on('receptionists')->onDelete('set null');
+        });
+    }
+
+    public function down()
+    {
+        Schema::dropIfExists('patients');
+        Schema::dropIfExists('receptionists');
+        Schema::dropIfExists('doctors');
+    }
+}

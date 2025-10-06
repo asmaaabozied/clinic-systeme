@@ -1,0 +1,54 @@
+//footer
+.footer{
+    background-color: var(--bs-primary-dark);
+    border-radius: var(--br-stage-5) var(--br-stage-5) 0 0;
+padding-top: 4rem;
+
+    .footer-heading{
+
+font-size: var(--bs-font-18);
+font-weight: var(--fw-500);
+color: var(--bs-light-000);
+margin-bottom: 1rem;;
+
+    }
+    ul{
+        li{
+            margin-bottom: 0.7rem;
+            a{
+                color: var(--bs-light-300);
+                font-size: var(--bs-font-16);
+            }
+           
+    }
+}
+
+.btn-main{
+width:100px;
+}
+.copyright{
+    background-image: url("../img/Footerdown-bk.svg");
+    background-size: cover;
+background-position: center ;
+    background-repeat: no-repeat;
+    padding: 2rem 1rem;
+    p{
+
+font-size: var(--bs-font-14);
+font-weight: 400;
+color:var(--bs-light-300);
+
+
+    }
+
+}
+.linkes{
+    a{
+        font-size: var(--bs-font-14);
+        color: var(--bs-light-300);
+    }
+    a:hover{
+        color: var(--bs-light-400)
+    }
+}
+}

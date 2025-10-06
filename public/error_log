@@ -1,0 +1,128 @@
+[19-May-2025 13:07:30 UTC] PHP Warning:  include(/home/aliftiru/erpgo.alifaris.com/vendor/composer/../../app/Http/Controllers/Controller.php): Failed to open stream: No such file or directory in /home/aliftiru/erpgo.alifaris.com/vendor/composer/ClassLoader.php on line 576
+[19-May-2025 13:07:30 UTC] PHP Warning:  include(): Failed opening '/home/aliftiru/erpgo.alifaris.com/vendor/composer/../../app/Http/Controllers/Controller.php' for inclusion (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/aliftiru/erpgo.alifaris.com/vendor/composer/ClassLoader.php on line 576
+[19-May-2025 13:07:30 UTC] PHP Fatal error:  Uncaught RuntimeException: A facade root has not been set. in /home/aliftiru/erpgo.alifaris.com/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php:354
+Stack trace:
+#0 /home/aliftiru/erpgo.alifaris.com/vendor/symfony/http-foundation/Response.php(459): Illuminate\Support\Facades\Facade::__callStatic()
+#1 /home/aliftiru/erpgo.alifaris.com/vendor/symfony/http-foundation/Response.php(436): Symfony\Component\HttpFoundation\Response->_toString()
+#2 /home/aliftiru/erpgo.alifaris.com/vendor/symfony/http-foundation/Response.php(212): Symfony\Component\HttpFoundation\Response->setContent()
+#3 /home/aliftiru/erpgo.alifaris.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(824): Symfony\Component\HttpFoundation\Response->__construct()
+#4 /home/aliftiru/erpgo.alifaris.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(804): Illuminate\Foundation\Exceptions\Handler->convertExceptionToResponse()
+#5 /home/aliftiru/erpgo.alifaris.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(703): Illuminate\Foundation\Exceptions\Handler->prepareResponse()
+#6 /home/aliftiru/erpgo.alifaris.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(592): Illuminate\Foundation\Exceptions\Handler->renderExceptionResponse()
+#7 /home/aliftiru/erpgo.alifaris.com/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(512): Illuminate\Foundation\Exceptions\Handler->render()
+#8 /home/aliftiru/erpgo.alifaris.com/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(149): Illuminate\Foundation\Http\Kernel->renderException()
+#9 /home/aliftiru/erpgo.alifaris.com/public/index.php(51): Illuminate\Foundation\Http\Kernel->handle()
+#10 {main}
+  thrown in /home/aliftiru/erpgo.alifaris.com/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php on line 354
+[19-May-2025 13:07:33 UTC] PHP Warning:  include(/home/aliftiru/erpgo.alifaris.com/vendor/composer/../../app/Http/Controllers/Controller.php): Failed to open stream: No such file or directory in /home/aliftiru/erpgo.alifaris.com/vendor/composer/ClassLoader.php on line 576
+[19-May-2025 13:07:33 UTC] PHP Warning:  include(): Failed opening '/home/aliftiru/erpgo.alifaris.com/vendor/composer/../../app/Http/Controllers/Controller.php' for inclusion (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/aliftiru/erpgo.alifaris.com/vendor/composer/ClassLoader.php on line 576
+[19-May-2025 13:07:33 UTC] PHP Fatal error:  Uncaught RuntimeException: A facade root has not been set. in /home/aliftiru/erpgo.alifaris.com/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php:354
+Stack trace:
+#0 /home/aliftiru/erpgo.alifaris.com/vendor/symfony/http-foundation/Response.php(459): Illuminate\Support\Facades\Facade::__callStatic()
+#1 /home/aliftiru/erpgo.alifaris.com/vendor/symfony/http-foundation/Response.php(436): Symfony\Component\HttpFoundation\Response->_toString()
+#2 /home/aliftiru/erpgo.alifaris.com/vendor/symfony/http-foundation/Response.php(212): Symfony\Component\HttpFoundation\Response->setContent()
+#3 /home/aliftiru/erpgo.alifaris.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(824): Symfony\Component\HttpFoundation\Response->__construct()
+#4 /home/aliftiru/erpgo.alifaris.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(804): Illuminate\Foundation\Exceptions\Handler->convertExceptionToResponse()
+#5 /home/aliftiru/erpgo.alifaris.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(703): Illuminate\Foundation\Exceptions\Handler->prepareResponse()
+#6 /home/aliftiru/erpgo.alifaris.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(592): Illuminate\Foundation\Exceptions\Handler->renderExceptionResponse()
+#7 /home/aliftiru/erpgo.alifaris.com/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(512): Illuminate\Foundation\Exceptions\Handler->render()
+#8 /home/aliftiru/erpgo.alifaris.com/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(149): Illuminate\Foundation\Http\Kernel->renderException()
+#9 /home/aliftiru/erpgo.alifaris.com/public/index.php(51): Illuminate\Foundation\Http\Kernel->handle()
+#10 {main}
+  thrown in /home/aliftiru/erpgo.alifaris.com/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php on line 354
+[19-May-2025 13:07:38 UTC] PHP Warning:  include(/home/aliftiru/erpgo.alifaris.com/vendor/composer/../../app/Http/Controllers/Controller.php): Failed to open stream: No such file or directory in /home/aliftiru/erpgo.alifaris.com/vendor/composer/ClassLoader.php on line 576
+[19-May-2025 13:07:38 UTC] PHP Warning:  include(): Failed opening '/home/aliftiru/erpgo.alifaris.com/vendor/composer/../../app/Http/Controllers/Controller.php' for inclusion (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/aliftiru/erpgo.alifaris.com/vendor/composer/ClassLoader.php on line 576
+[19-May-2025 13:07:38 UTC] PHP Fatal error:  Uncaught RuntimeException: A facade root has not been set. in /home/aliftiru/erpgo.alifaris.com/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php:354
+Stack trace:
+#0 /home/aliftiru/erpgo.alifaris.com/vendor/symfony/http-foundation/Response.php(459): Illuminate\Support\Facades\Facade::__callStatic()
+#1 /home/aliftiru/erpgo.alifaris.com/vendor/symfony/http-foundation/Response.php(436): Symfony\Component\HttpFoundation\Response->_toString()
+#2 /home/aliftiru/erpgo.alifaris.com/vendor/symfony/http-foundation/Response.php(212): Symfony\Component\HttpFoundation\Response->setContent()
+#3 /home/aliftiru/erpgo.alifaris.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(824): Symfony\Component\HttpFoundation\Response->__construct()
+#4 /home/aliftiru/erpgo.alifaris.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(804): Illuminate\Foundation\Exceptions\Handler->convertExceptionToResponse()
+#5 /home/aliftiru/erpgo.alifaris.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(703): Illuminate\Foundation\Exceptions\Handler->prepareResponse()
+#6 /home/aliftiru/erpgo.alifaris.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(592): Illuminate\Foundation\Exceptions\Handler->renderExceptionResponse()
+#7 /home/aliftiru/erpgo.alifaris.com/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(512): Illuminate\Foundation\Exceptions\Handler->render()
+#8 /home/aliftiru/erpgo.alifaris.com/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(149): Illuminate\Foundation\Http\Kernel->renderException()
+#9 /home/aliftiru/erpgo.alifaris.com/public/index.php(51): Illuminate\Foundation\Http\Kernel->handle()
+#10 {main}
+  thrown in /home/aliftiru/erpgo.alifaris.com/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php on line 354
+[19-May-2025 13:07:43 UTC] PHP Warning:  include(/home/aliftiru/erpgo.alifaris.com/vendor/composer/../../app/Http/Controllers/Controller.php): Failed to open stream: No such file or directory in /home/aliftiru/erpgo.alifaris.com/vendor/composer/ClassLoader.php on line 576
+[19-May-2025 13:07:44 UTC] PHP Warning:  include(): Failed opening '/home/aliftiru/erpgo.alifaris.com/vendor/composer/../../app/Http/Controllers/Controller.php' for inclusion (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/aliftiru/erpgo.alifaris.com/vendor/composer/ClassLoader.php on line 576
+[19-May-2025 13:07:44 UTC] PHP Fatal error:  Uncaught RuntimeException: A facade root has not been set. in /home/aliftiru/erpgo.alifaris.com/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php:354
+Stack trace:
+#0 /home/aliftiru/erpgo.alifaris.com/vendor/symfony/http-foundation/Response.php(459): Illuminate\Support\Facades\Facade::__callStatic()
+#1 /home/aliftiru/erpgo.alifaris.com/vendor/symfony/http-foundation/Response.php(436): Symfony\Component\HttpFoundation\Response->_toString()
+#2 /home/aliftiru/erpgo.alifaris.com/vendor/symfony/http-foundation/Response.php(212): Symfony\Component\HttpFoundation\Response->setContent()
+#3 /home/aliftiru/erpgo.alifaris.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(824): Symfony\Component\HttpFoundation\Response->__construct()
+#4 /home/aliftiru/erpgo.alifaris.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(804): Illuminate\Foundation\Exceptions\Handler->convertExceptionToResponse()
+#5 /home/aliftiru/erpgo.alifaris.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(703): Illuminate\Foundation\Exceptions\Handler->prepareResponse()
+#6 /home/aliftiru/erpgo.alifaris.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(592): Illuminate\Foundation\Exceptions\Handler->renderExceptionResponse()
+#7 /home/aliftiru/erpgo.alifaris.com/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(512): Illuminate\Foundation\Exceptions\Handler->render()
+#8 /home/aliftiru/erpgo.alifaris.com/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(149): Illuminate\Foundation\Http\Kernel->renderException()
+#9 /home/aliftiru/erpgo.alifaris.com/public/index.php(51): Illuminate\Foundation\Http\Kernel->handle()
+#10 {main}
+  thrown in /home/aliftiru/erpgo.alifaris.com/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php on line 354
+[19-May-2025 13:27:12 UTC] PHP Warning:  include(/home/aliftiru/erpgo.alifaris.com/vendor/composer/../../app/Http/Controllers/Controller.php): Failed to open stream: No such file or directory in /home/aliftiru/erpgo.alifaris.com/vendor/composer/ClassLoader.php on line 576
+[19-May-2025 13:27:12 UTC] PHP Warning:  include(): Failed opening '/home/aliftiru/erpgo.alifaris.com/vendor/composer/../../app/Http/Controllers/Controller.php' for inclusion (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/aliftiru/erpgo.alifaris.com/vendor/composer/ClassLoader.php on line 576
+[19-May-2025 13:27:12 UTC] PHP Fatal error:  Uncaught RuntimeException: A facade root has not been set. in /home/aliftiru/erpgo.alifaris.com/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php:354
+Stack trace:
+#0 /home/aliftiru/erpgo.alifaris.com/vendor/symfony/http-foundation/Response.php(459): Illuminate\Support\Facades\Facade::__callStatic()
+#1 /home/aliftiru/erpgo.alifaris.com/vendor/symfony/http-foundation/Response.php(436): Symfony\Component\HttpFoundation\Response->_toString()
+#2 /home/aliftiru/erpgo.alifaris.com/vendor/symfony/http-foundation/Response.php(212): Symfony\Component\HttpFoundation\Response->setContent()
+#3 /home/aliftiru/erpgo.alifaris.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(824): Symfony\Component\HttpFoundation\Response->__construct()
+#4 /home/aliftiru/erpgo.alifaris.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(804): Illuminate\Foundation\Exceptions\Handler->convertExceptionToResponse()
+#5 /home/aliftiru/erpgo.alifaris.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(703): Illuminate\Foundation\Exceptions\Handler->prepareResponse()
+#6 /home/aliftiru/erpgo.alifaris.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(592): Illuminate\Foundation\Exceptions\Handler->renderExceptionResponse()
+#7 /home/aliftiru/erpgo.alifaris.com/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(512): Illuminate\Foundation\Exceptions\Handler->render()
+#8 /home/aliftiru/erpgo.alifaris.com/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(149): Illuminate\Foundation\Http\Kernel->renderException()
+#9 /home/aliftiru/erpgo.alifaris.com/public/index.php(51): Illuminate\Foundation\Http\Kernel->handle()
+#10 {main}
+  thrown in /home/aliftiru/erpgo.alifaris.com/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php on line 354
+[19-May-2025 13:27:15 UTC] PHP Warning:  include(/home/aliftiru/erpgo.alifaris.com/vendor/composer/../../app/Http/Controllers/Controller.php): Failed to open stream: No such file or directory in /home/aliftiru/erpgo.alifaris.com/vendor/composer/ClassLoader.php on line 576
+[19-May-2025 13:27:15 UTC] PHP Warning:  include(): Failed opening '/home/aliftiru/erpgo.alifaris.com/vendor/composer/../../app/Http/Controllers/Controller.php' for inclusion (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/aliftiru/erpgo.alifaris.com/vendor/composer/ClassLoader.php on line 576
+[19-May-2025 13:27:15 UTC] PHP Fatal error:  Uncaught RuntimeException: A facade root has not been set. in /home/aliftiru/erpgo.alifaris.com/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php:354
+Stack trace:
+#0 /home/aliftiru/erpgo.alifaris.com/vendor/symfony/http-foundation/Response.php(459): Illuminate\Support\Facades\Facade::__callStatic()
+#1 /home/aliftiru/erpgo.alifaris.com/vendor/symfony/http-foundation/Response.php(436): Symfony\Component\HttpFoundation\Response->_toString()
+#2 /home/aliftiru/erpgo.alifaris.com/vendor/symfony/http-foundation/Response.php(212): Symfony\Component\HttpFoundation\Response->setContent()
+#3 /home/aliftiru/erpgo.alifaris.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(824): Symfony\Component\HttpFoundation\Response->__construct()
+#4 /home/aliftiru/erpgo.alifaris.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(804): Illuminate\Foundation\Exceptions\Handler->convertExceptionToResponse()
+#5 /home/aliftiru/erpgo.alifaris.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(703): Illuminate\Foundation\Exceptions\Handler->prepareResponse()
+#6 /home/aliftiru/erpgo.alifaris.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(592): Illuminate\Foundation\Exceptions\Handler->renderExceptionResponse()
+#7 /home/aliftiru/erpgo.alifaris.com/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(512): Illuminate\Foundation\Exceptions\Handler->render()
+#8 /home/aliftiru/erpgo.alifaris.com/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(149): Illuminate\Foundation\Http\Kernel->renderException()
+#9 /home/aliftiru/erpgo.alifaris.com/public/index.php(51): Illuminate\Foundation\Http\Kernel->handle()
+#10 {main}
+  thrown in /home/aliftiru/erpgo.alifaris.com/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php on line 354
+[19-May-2025 13:29:38 UTC] PHP Warning:  include(/home/aliftiru/erpgo.alifaris.com/vendor/composer/../../app/Http/Controllers/Controller.php): Failed to open stream: No such file or directory in /home/aliftiru/erpgo.alifaris.com/vendor/composer/ClassLoader.php on line 576
+[19-May-2025 13:29:38 UTC] PHP Warning:  include(): Failed opening '/home/aliftiru/erpgo.alifaris.com/vendor/composer/../../app/Http/Controllers/Controller.php' for inclusion (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/aliftiru/erpgo.alifaris.com/vendor/composer/ClassLoader.php on line 576
+[19-May-2025 13:29:38 UTC] PHP Fatal error:  Uncaught RuntimeException: A facade root has not been set. in /home/aliftiru/erpgo.alifaris.com/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php:354
+Stack trace:
+#0 /home/aliftiru/erpgo.alifaris.com/vendor/symfony/http-foundation/Response.php(459): Illuminate\Support\Facades\Facade::__callStatic()
+#1 /home/aliftiru/erpgo.alifaris.com/vendor/symfony/http-foundation/Response.php(436): Symfony\Component\HttpFoundation\Response->_toString()
+#2 /home/aliftiru/erpgo.alifaris.com/vendor/symfony/http-foundation/Response.php(212): Symfony\Component\HttpFoundation\Response->setContent()
+#3 /home/aliftiru/erpgo.alifaris.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(824): Symfony\Component\HttpFoundation\Response->__construct()
+#4 /home/aliftiru/erpgo.alifaris.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(804): Illuminate\Foundation\Exceptions\Handler->convertExceptionToResponse()
+#5 /home/aliftiru/erpgo.alifaris.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(703): Illuminate\Foundation\Exceptions\Handler->prepareResponse()
+#6 /home/aliftiru/erpgo.alifaris.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(592): Illuminate\Foundation\Exceptions\Handler->renderExceptionResponse()
+#7 /home/aliftiru/erpgo.alifaris.com/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(512): Illuminate\Foundation\Exceptions\Handler->render()
+#8 /home/aliftiru/erpgo.alifaris.com/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(149): Illuminate\Foundation\Http\Kernel->renderException()
+#9 /home/aliftiru/erpgo.alifaris.com/public/index.php(51): Illuminate\Foundation\Http\Kernel->handle()
+#10 {main}
+  thrown in /home/aliftiru/erpgo.alifaris.com/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php on line 354
+[19-May-2025 13:30:59 UTC] PHP Warning:  include(/home/aliftiru/erpgo.alifaris.com/vendor/composer/../../app/Http/Controllers/Controller.php): Failed to open stream: No such file or directory in /home/aliftiru/erpgo.alifaris.com/vendor/composer/ClassLoader.php on line 576
+[19-May-2025 13:30:59 UTC] PHP Warning:  include(): Failed opening '/home/aliftiru/erpgo.alifaris.com/vendor/composer/../../app/Http/Controllers/Controller.php' for inclusion (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/aliftiru/erpgo.alifaris.com/vendor/composer/ClassLoader.php on line 576
+[19-May-2025 13:30:59 UTC] PHP Fatal error:  Uncaught RuntimeException: A facade root has not been set. in /home/aliftiru/erpgo.alifaris.com/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php:354
+Stack trace:
+#0 /home/aliftiru/erpgo.alifaris.com/vendor/symfony/http-foundation/Response.php(459): Illuminate\Support\Facades\Facade::__callStatic()
+#1 /home/aliftiru/erpgo.alifaris.com/vendor/symfony/http-foundation/Response.php(436): Symfony\Component\HttpFoundation\Response->_toString()
+#2 /home/aliftiru/erpgo.alifaris.com/vendor/symfony/http-foundation/Response.php(212): Symfony\Component\HttpFoundation\Response->setContent()
+#3 /home/aliftiru/erpgo.alifaris.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(824): Symfony\Component\HttpFoundation\Response->__construct()
+#4 /home/aliftiru/erpgo.alifaris.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(804): Illuminate\Foundation\Exceptions\Handler->convertExceptionToResponse()
+#5 /home/aliftiru/erpgo.alifaris.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(703): Illuminate\Foundation\Exceptions\Handler->prepareResponse()
+#6 /home/aliftiru/erpgo.alifaris.com/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(592): Illuminate\Foundation\Exceptions\Handler->renderExceptionResponse()
+#7 /home/aliftiru/erpgo.alifaris.com/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(512): Illuminate\Foundation\Exceptions\Handler->render()
+#8 /home/aliftiru/erpgo.alifaris.com/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(149): Illuminate\Foundation\Http\Kernel->renderException()
+#9 /home/aliftiru/erpgo.alifaris.com/public/index.php(51): Illuminate\Foundation\Http\Kernel->handle()
+#10 {main}
+  thrown in /home/aliftiru/erpgo.alifaris.com/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php on line 354
