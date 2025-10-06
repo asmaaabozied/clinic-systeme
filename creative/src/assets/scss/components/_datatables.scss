@@ -1,0 +1,89 @@
+// DataTables Bootstrap 5 Theme Overrides for Velzon
+
+// Table header and cell spacing
+.table.dataTable th,
+.table.dataTable td {
+  vertical-align: middle;
+  padding: 0.75rem 1rem;
+  border-color: #e9ecef;
+}
+
+// Table header background
+.table.dataTable th {
+  background: #f8f9fa;
+  font-weight: 600;
+  color: #495057;
+}
+
+// DataTables search input
+.dataTables_filter input[type="search"] {
+  border: 1px solid #ced4da;
+  border-radius: 0.375rem;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  margin-left: 0.5rem;
+}
+
+// DataTables length select
+.dataTables_length select {
+  border: 1px solid #ced4da;
+  border-radius: 0.375rem;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  margin-left: 0.5rem;
+}
+
+// DataTables pagination
+.dataTables_paginate .pagination {
+  margin-bottom: 0;
+}
+.dataTables_paginate .page-item .page-link {
+  border-radius: 0.375rem;
+  color: #495057;
+  border: 1px solid #dee2e6;
+  margin: 0 2px;
+}
+.dataTables_paginate .page-item.active .page-link {
+  background: #0d6efd;
+  color: #fff;
+  border-color: #0d6efd;
+}
+.dataTables_paginate .page-item .page-link:hover {
+  background: #e9ecef;
+  color: #495057;
+}
+
+// DataTables action buttons
+.dataTable td .btn {
+  margin-right: 0.25rem;
+  margin-bottom: 0.15rem;
+  font-size: 0.95em;
+  padding: 0.25rem 0.75rem;
+}
+
+// DataTables checkboxes
+.dataTable td input[type="checkbox"],
+.dataTable th input[type="checkbox"] {
+  margin: 0;
+  accent-color: #0d6efd;
+  width: 1.1em;
+  height: 1.1em;
+}
+
+// DataTables info and processing
+.dataTables_info {
+  margin-top: 1rem;
+  color: #6c757d;
+}
+.dataTables_processing {
+  background: rgba(255,255,255,0.9);
+  border: 1px solid #dee2e6;
+  border-radius: 0.375rem;
+  padding: 1rem;
+  text-align: center;
+}
+
+// DataTables responsive icon
+.dtr-control:before {
+  color: #0d6efd;
+} 

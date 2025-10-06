@@ -1,0 +1,1030 @@
+[
+  {
+    "code":10001,
+    "charge_name":"كشف استشارى"
+  },
+  {
+    "code":10002,
+    "charge_name":"كشف"
+  },
+  {
+    "code":10003,
+    "charge_name":"مراجعة"
+  },
+  {
+    "code":100002,
+    "charge_name":"COMPLETE BLOOD COUNT (CBC"
+  },
+  {
+    "code":100003,
+    "charge_name":"ERYTHROCYTES SEDIMENTATIO"
+  },
+  {
+    "code":100004,
+    "charge_name":"ANTINUCLEAR ANTIBODIES (A"
+  },
+  {
+    "code":100005,
+    "charge_name":"HAIR CARE LAB. PACKAGE"
+  },
+  {
+    "code":100006,
+    "charge_name":"ROAKUTAN PACKAGE #2"
+  },
+  {
+    "code":100007,
+    "charge_name":"ANTI THYROID PEROXIDASE ABS(TPO)"
+  },
+  {
+    "code":100008,
+    "charge_name":"HEPATITIS B VIRUS SURFACE"
+  },
+  {
+    "code":100009,
+    "charge_name":"HEPATITAS B SURFACE (HBs)"
+  },
+  {
+    "code":100010,
+    "charge_name":"HEPATITAS C VIRUS (HCV) A"
+  },
+  {
+    "code":100011,
+    "charge_name":"ANTI THYROGLOBULIN (A-TG)"
+  },
+  {
+    "code":100012,
+    "charge_name":"roaccutan package #1"
+  },
+  {
+    "code":100013,
+    "charge_name":"Ferritin in serum"
+  },
+  {
+    "code":100014,
+    "charge_name":"Thyroid Dtimulating Hormone(TSH)"
+  },
+  {
+    "code":100015,
+    "charge_name":"Vitamin D(25 OH -Vit d- total )"
+  },
+  {
+    "code":100016,
+    "charge_name":"Transferrin,Serum"
+  },
+  {
+    "code":100017,
+    "charge_name":"Triiodothyronin -Free (FT3),Serum"
+  },
+  {
+    "code":100018,
+    "charge_name":"Triiodothyronin -Free (FT4),Serum"
+  },
+  {
+    "code":30001,
+    "charge_name":"Botox face 1ml"
+  },
+  {
+    "code":30002,
+    "charge_name":"Botox face and neck"
+  },
+  {
+    "code":30003,
+    "charge_name":"Botox gummy smile"
+  },
+  {
+    "code":30004,
+    "charge_name":"Botox crows feet"
+  },
+  {
+    "code":30005,
+    "charge_name":"Botox nose"
+  },
+  {
+    "code":30006,
+    "charge_name":"Botox underarms"
+  },
+  {
+    "code":30007,
+    "charge_name":"Botox hyperhydrosis hand"
+  },
+  {
+    "code":30008,
+    "charge_name":"Botox hyperhydrosis feet"
+  },
+  {
+    "code":30009,
+    "charge_name":"Botox neck "
+  },
+  {
+    "code":30010,
+    "charge_name":"Mesobotox"
+  },
+  {
+    "code":30011,
+    "charge_name":"Teosyeal filler 1 ml"
+  },
+  {
+    "code":30012,
+    "charge_name":"Aliaxin filler 1ml"
+  },
+  {
+    "code":30013,
+    "charge_name":"Skinfill filler1ml"
+  },
+  {
+    "code":30014,
+    "charge_name":"Restylane filler 1 ml"
+  },
+  {
+    "code":30015,
+    "charge_name":"Skinfill body filler 10 ml "
+  },
+  {
+    "code":30016,
+    "charge_name":"Skinfill body filler 50 ml"
+  },
+  {
+    "code":30017,
+    "charge_name":"PDO thread"
+  },
+  {
+    "code":30018,
+    "charge_name":"PLX thread"
+  },
+  {
+    "code":30019,
+    "charge_name":"Aptos thread"
+  },
+  {
+    "code":30020,
+    "charge_name":"Silhouette thread"
+  },
+  {
+    "code":30021,
+    "charge_name":"Mono thread "
+  },
+  {
+    "code":30022,
+    "charge_name":"Mesotherapy "
+  },
+  {
+    "code":30023,
+    "charge_name":"Stem cell for skin "
+  },
+  {
+    "code":30024,
+    "charge_name":"Stem cell for hair"
+  },
+  {
+    "code":30025,
+    "charge_name":"ASce exsomes for skin"
+  },
+  {
+    "code":30026,
+    "charge_name":"Asce exsomes for hair"
+  },
+  {
+    "code":30027,
+    "charge_name":"Profhilo 2 ml"
+  },
+  {
+    "code":30028,
+    "charge_name":"Neuckloskin 3 ml"
+  },
+  {
+    "code":30029,
+    "charge_name":"Neucklofill"
+  },
+  {
+    "code":30030,
+    "charge_name":"Skinfill blue"
+  },
+  {
+    "code":30031,
+    "charge_name":"Persebelle 3 ml"
+  },
+  {
+    "code":30032,
+    "charge_name":"persebelle 5 ml"
+  },
+  {
+    "code":30033,
+    "charge_name":"Dorthy "
+  },
+  {
+    "code":30034,
+    "charge_name":"Neofound"
+  },
+  {
+    "code":30035,
+    "charge_name":"Hydro deluxe "
+  },
+  {
+    "code":30036,
+    "charge_name":"Innovyal 1 ml "
+  },
+  {
+    "code":30037,
+    "charge_name":"Innovyal 3ml"
+  },
+  {
+    "code":30038,
+    "charge_name":"Normal Plasma Promoitalia"
+  },
+  {
+    "code":30039,
+    "charge_name":"Plasma HA Promoitalia(supervision of Dr. Hani)"
+  },
+  {
+    "code":30040,
+    "charge_name":"Plasma biotin Promoitalia(supervision of Dr. Hani)"
+  },
+  {
+    "code":30041,
+    "charge_name":"Regan lab plasma"
+  },
+  {
+    "code":30042,
+    "charge_name":"Sculptra 10 ml"
+  },
+  {
+    "code":30043,
+    "charge_name":"Rich 10 ml"
+  },
+  {
+    "code":30044,
+    "charge_name":"Lanluma "
+  },
+  {
+    "code":30045,
+    "charge_name":"Radiesse filler"
+  },
+  {
+    "code":30046,
+    "charge_name":"Fat lypolysis injection double chain"
+  },
+  {
+    "code":30047,
+    "charge_name":"Fat lypolysis injection body"
+  },
+  {
+    "code":30048,
+    "charge_name":"Tca peeling small area"
+  },
+  {
+    "code":30049,
+    "charge_name":"Tca peeling medium area"
+  },
+  {
+    "code":30050,
+    "charge_name":"Tca large area"
+  },
+  {
+    "code":30051,
+    "charge_name":"full body hair removal laser"
+  },
+  {
+    "code":30052,
+    "charge_name":"Mini body hair removal laser"
+  },
+  {
+    "code":30053,
+    "charge_name":"Face hair removal laser"
+  },
+  {
+    "code":30054,
+    "charge_name":"Eyebrow hair removal laser"
+  },
+  {
+    "code":30055,
+    "charge_name":"Mustache hair removal laser"
+  },
+  {
+    "code":30056,
+    "charge_name":"Underarms hair removal laser(supervision of Dr. Hani)"
+  },
+  {
+    "code":30057,
+    "charge_name":"Bikini hair removal laser"
+  },
+  {
+    "code":30058,
+    "charge_name":"Legs hair removal laser"
+  },
+  {
+    "code":30059,
+    "charge_name":"Back hair removal laser "
+  },
+  {
+    "code":30060,
+    "charge_name":"Arms hair removal laser"
+  },
+  {
+    "code":30061,
+    "charge_name":"Chest hair removal laser"
+  },
+  {
+    "code":30062,
+    "charge_name":"Abdomen hair removal laser"
+  },
+  {
+    "code":30063,
+    "charge_name":"Picoway laser for face (supervision of Dr. Hani)"
+  },
+  {
+    "code":30064,
+    "charge_name":"Picoway laser for Neck (supervision of Dr. Hani)"
+  },
+  {
+    "code":30065,
+    "charge_name":"Picoway laser for Chest(supervision of Dr. Hani)"
+  },
+  {
+    "code":30066,
+    "charge_name":"Picoway laser for Abdomen(supervision of Dr. Hani)"
+  },
+  {
+    "code":30067,
+    "charge_name":"Picoway laser for Back(supervision of Dr. Hani)"
+  },
+  {
+    "code":30068,
+    "charge_name":"Picoway laser for Arms(supervision of Dr. Hani)"
+  },
+  {
+    "code":30069,
+    "charge_name":"Picoway laser for Leg(supervision of Dr. Hani)"
+  },
+  {
+    "code":30070,
+    "charge_name":"Picoway laser for Buttocks(supervision of Dr. Hani)"
+  },
+  {
+    "code":30071,
+    "charge_name":"Picoway laser for Bikini(supervision of Dr. Hani)"
+  },
+  {
+    "code":30072,
+    "charge_name":"Picoway laser for Underarms(supervision of Dr. Hani)"
+  },
+  {
+    "code":30073,
+    "charge_name":"Picoway laser for Hand(supervision of Dr. Hani)"
+  },
+  {
+    "code":30074,
+    "charge_name":"Picoway laser for Knee(supervision of Dr. Hani)"
+  },
+  {
+    "code":30075,
+    "charge_name":"Picoway laser for Elbow(supervision of Dr. Hani)"
+  },
+  {
+    "code":30076,
+    "charge_name":"Picoway laser for Feets(supervision of Dr. Hani)"
+  },
+  {
+    "code":30077,
+    "charge_name":"Picoway laser Full body(supervision of Dr. Hani)"
+  },
+  {
+    "code":30078,
+    "charge_name":"Eyebrow Tatto removal by Picoway"
+  },
+  {
+    "code":30079,
+    "charge_name":"Tatto removal small area by picoway"
+  },
+  {
+    "code":30080,
+    "charge_name":"Tatto removal medium area by picoway"
+  },
+  {
+    "code":30081,
+    "charge_name":"Tatto removal large area by picoway"
+  },
+  {
+    "code":30082,
+    "charge_name":"Hydra touch deep cleaning "
+  },
+  {
+    "code":30083,
+    "charge_name":"Hydratouch deepcleaning with vitamins"
+  },
+  {
+    "code":30084,
+    "charge_name":"Dermapen with mesotherapy"
+  },
+  {
+    "code":30085,
+    "charge_name":"Dermapen with stem cell"
+  },
+  {
+    "code":30086,
+    "charge_name":"Dermapen with exsosomes"
+  },
+  {
+    "code":30087,
+    "charge_name":"Face mask"
+  },
+  {
+    "code":30088,
+    "charge_name":"Ultraformer MPT face(supervision of Dr. Hani)"
+  },
+  {
+    "code":30089,
+    "charge_name":"Ultraformer MPT neck(supervision of Dr. Hani)"
+  },
+  {
+    "code":30090,
+    "charge_name":"Ultraformer MPT face and neck(supervision of Dr. Hani)"
+  },
+  {
+    "code":30091,
+    "charge_name":"Ultraformer MPT double chain(supervision of Dr. Hani)"
+  },
+  {
+    "code":30092,
+    "charge_name":"Ultraformer MPT jawline(supervision of Dr. Hani)"
+  },
+  {
+    "code":30093,
+    "charge_name":"Ultraformer MPT eyebrow(supervision of Dr. Hani)"
+  },
+  {
+    "code":30094,
+    "charge_name":"Genius treatment for face"
+  },
+  {
+    "code":30095,
+    "charge_name":"Genius treatment for body"
+  },
+  {
+    "code":30096,
+    "charge_name":"Frax laser face "
+  },
+  {
+    "code":30097,
+    "charge_name":"Frax laser face and neck"
+  },
+  {
+    "code":30098,
+    "charge_name":"Frax laser body "
+  },
+  {
+    "code":30099,
+    "charge_name":"Frax laser small area"
+  },
+  {
+    "code":30100,
+    "charge_name":"Frax laser large area"
+  },
+  {
+    "code":30101,
+    "charge_name":"Frax laser small scar"
+  },
+  {
+    "code":30102,
+    "charge_name":"Frax laser for face+normal plasma+stem cell+ subsession offer"
+  },
+  {
+    "code":30103,
+    "charge_name":"Frax laser for face+stem cell+mask offer"
+  },
+  {
+    "code":30104,
+    "charge_name":"Frax laser for face+exsosomes+ mask offer"
+  },
+  {
+    "code":30105,
+    "charge_name":"Genius treatment for face+stem cell+mask offer"
+  },
+  {
+    "code":30106,
+    "charge_name":"Genius treatment for face+exsomes+mask +Subsession +stem cell offer"
+  },
+  {
+    "code":30107,
+    "charge_name":"Picoway laser for  face+topical stem cell for whiting offer(supervision of Dr. Hani)"
+  },
+  {
+    "code":30108,
+    "charge_name":"Picoway laser for face and neck +topical stem cell whiting offer(supervision of Dr. Hani)"
+  },
+  {
+    "code":30109,
+    "charge_name":"picoway laser for underarms+topical stem cell whiting offer(supervision of Dr. Hani)"
+  },
+  {
+    "code":30110,
+    "charge_name":"Picoway laser for bikini+topical stem cell whiting offer(supervision of Dr. Hani)"
+  },
+  {
+    "code":30111,
+    "charge_name":"Picoway laser for face offer(supervision of Dr. Hani)"
+  },
+  {
+    "code":30112,
+    "charge_name":"picoway laser for face and neck offer(supervision of Dr. Hani)"
+  },
+  {
+    "code":30113,
+    "charge_name":"Picoway laser for knee offer(supervision of Dr. Hani)"
+  },
+  {
+    "code":30114,
+    "charge_name":"Picoway laser for elbow offer(supervision of Dr. Hani)"
+  },
+  {
+    "code":30115,
+    "charge_name":"Picoway laser for underarms offer(supervision of Dr. Hani)"
+  },
+  {
+    "code":30116,
+    "charge_name":"Picoway laser for bikini offer(supervision of Dr. Hani)"
+  },
+  {
+    "code":30117,
+    "charge_name":"Picoway laser for hands offer(supervision of Dr. Hani)"
+  },
+  {
+    "code":30118,
+    "charge_name":"Picoway laser for Feets offer(supervision of Dr. Hani)"
+  },
+  {
+    "code":30119,
+    "charge_name":"Picoway laser for lips offer(supervision of Dr. Hani)"
+  },
+  {
+    "code":30120,
+    "charge_name":"Picoway laser for eye brow tatto removal offer(supervision of Dr. Hani)"
+  },
+  {
+    "code":30121,
+    "charge_name":"Botox 1 ml offer"
+  },
+  {
+    "code":30122,
+    "charge_name":" skinfill filler 1 ml offer"
+  },
+  {
+    "code":30123,
+    "charge_name":" teosyeal 1 ml offer"
+  },
+  {
+    "code":30124,
+    "charge_name":"Opera filler 1ml offer"
+  },
+  {
+    "code":30125,
+    "charge_name":"Alixian filler 1ml offer"
+  },
+  {
+    "code":30126,
+    "charge_name":"Restylane filler 1 ml offer"
+  },
+  {
+    "code":30127,
+    "charge_name":"Normal plasma promoitalia offer"
+  },
+  {
+    "code":30128,
+    "charge_name":"Plasma HA Promoitalia offer(supervision of Dr. Hani)"
+  },
+  {
+    "code":30129,
+    "charge_name":"Plasma biotin Promoitalia offer (supervision of Dr. Hani)"
+  },
+  {
+    "code":30130,
+    "charge_name":"Plasma biotin Promoitalia+ stem cell for hair offer(supervision of Dr. Hani)"
+  },
+  {
+    "code":30131,
+    "charge_name":"Botox crows feet offer"
+  },
+  {
+    "code":30132,
+    "charge_name":"Botox neck offer"
+  },
+  {
+    "code":30133,
+    "charge_name":"Botox face and neck offer"
+  },
+  {
+    "code":30134,
+    "charge_name":"Botox gummy smile offer"
+  },
+  {
+    "code":30135,
+    "charge_name":"Botox hyperhydrosis hand offer"
+  },
+  {
+    "code":30136,
+    "charge_name":"Botox underarms hyperhydrosis offer"
+  },
+  {
+    "code":30137,
+    "charge_name":"Ultraformer MPT face offer(supervision of Dr. Hani)"
+  },
+  {
+    "code":30138,
+    "charge_name":"Ultraformer MPT face and neck offer(supervision of Dr. Hani)"
+  },
+  {
+    "code":30139,
+    "charge_name":"Ultraformer MPT neck offer(supervision of Dr. Hani)"
+  },
+  {
+    "code":30140,
+    "charge_name":"Ultraformer MPT double chain offer(supervision of Dr. Hani)"
+  },
+  {
+    "code":30141,
+    "charge_name":"Persebelle 3 ml offer"
+  },
+  {
+    "code":30143,
+    "charge_name":"dorthy offer"
+  },
+  {
+    "code":30144,
+    "charge_name":"profhilo 2 ml offer"
+  },
+  {
+    "code":30145,
+    "charge_name":"Neuckloskin 3 ml offer"
+  },
+  {
+    "code":30146,
+    "charge_name":"Neucklofill offer"
+  },
+  {
+    "code":30147,
+    "charge_name":"Skinfill blue offer"
+  },
+  {
+    "code":30148,
+    "charge_name":"Sculptra 10 ml offer"
+  },
+  {
+    "code":30149,
+    "charge_name":"Rich 10 ml offer"
+  },
+  {
+    "code":30150,
+    "charge_name":"Stem cell for hair offer"
+  },
+  {
+    "code":30151,
+    "charge_name":"Stem cell for skin offer "
+  },
+  {
+    "code":30152,
+    "charge_name":"Asce exsomes for skin offer"
+  },
+  {
+    "code":30153,
+    "charge_name":"Asce exsomes for hair offer"
+  },
+  {
+    "code":30154,
+    "charge_name":"Innovyal 1 ml offer"
+  },
+  {
+    "code":30155,
+    "charge_name":"Innovyal 3ml offer"
+  },
+  {
+    "code":30156,
+    "charge_name":"Hdracool deep cleaning with vitamin for face offer"
+  },
+  {
+    "code":30157,
+    "charge_name":"Hydratouch session for deep facial cleansing"
+  },
+  {
+    "code":30158,
+    "charge_name":"PDO thread offer"
+  },
+  {
+    "code":30159,
+    "charge_name":"Mesotherapy offer"
+  },
+  {
+    "code":30160,
+    "charge_name":"Jalupro"
+  },
+  {
+    "code":30162,
+    "charge_name":"Exsosome for skin"
+  },
+  {
+    "code":30163,
+    "charge_name":"Exsosome for hair"
+  },
+  {
+    "code":30164,
+    "charge_name":"Exsosome for skin offer"
+  },
+  {
+    "code":30165,
+    "charge_name":"Exsosome for hair offer"
+  },
+  {
+    "code":30166,
+    "charge_name":"Accure Face"
+  },
+  {
+    "code":30167,
+    "charge_name":"Accure Face offer"
+  },
+  {
+    "code":30168,
+    "charge_name":"Accure Body"
+  },
+  {
+    "code":30169,
+    "charge_name":"Accure Body offer"
+  },
+  {
+    "code":30170,
+    "charge_name":"Disolve Filler Hyaluronid"
+  },
+  {
+    "code":30171,
+    "charge_name":"Rich 5 ml"
+  },
+  {
+    "code":30172,
+    "charge_name":"Persebelle 1ml"
+  },
+  {
+    "code":30173,
+    "charge_name":"Persebelle 5 ml offer"
+  },
+  {
+    "code":30174,
+    "charge_name":"Persebelle lighting 5 ml"
+  },
+  {
+    "code":30175,
+    "charge_name":"3ML FILLER +1ML BOTOX+MESOTHERAPY"
+  },
+  {
+    "code":30176,
+    "charge_name":"COLD PEELING + HOME CARE"
+  },
+  {
+    "code":30177,
+    "charge_name":"BOTOX 2ML OFFER"
+  },
+  {
+    "code":30178,
+    "charge_name":"JALUPRO OFFER"
+  },
+  {
+    "code":30179,
+    "charge_name":"TCA SMALL AREA OFFER"
+  },
+  {
+    "code":30180,
+    "charge_name":"TCA LARGE AREA OFFER"
+  },
+  {
+    "code":30181,
+    "charge_name":"A CELL MATRIX"
+  },
+  {
+    "code":30182,
+    "charge_name":"A CELL MATRIX + PLASMA BIOTIN OFFER"
+  },
+  {
+    "code":30183,
+    "charge_name":"COLD PEELING"
+  },
+  {
+    "code":30184,
+    "charge_name":"COLD PEELING OFFER"
+  },
+  {
+    "code":30185,
+    "charge_name":"COLD PEELING + HOME CARE OFFER"
+  },
+  {
+    "code":30186,
+    "charge_name":"LIGHTING INJECTION AND PIGMENTATION TREATMENT"
+  },
+  {
+    "code":30187,
+    "charge_name":"LIGHTING INJECTION AND PIGMENTATION TREATMENT OFFER"
+  },
+  {
+    "code":30188,
+    "charge_name":"WARTS REMOVAL WITH CRAYO- ADULT"
+  },
+  {
+    "code":30189,
+    "charge_name":"WARTS REMOVAL WITH CRYO-CHILDREN"
+  },
+  {
+    "code":30191,
+    "charge_name":"HYDRAFACIAL WITH DERMAPEN"
+  },
+  {
+    "code":30192,
+    "charge_name":"INTRALESIONAL STEROID SINGLE LESION"
+  },
+  {
+    "code":30193,
+    "charge_name":"INTRALESIONAL STEROID MULTIPLE LESIONS"
+  },
+  {
+    "code":30194,
+    "charge_name":"INTRALESIONAL STEROID FOR WHOLE SCALP"
+  },
+  {
+    "code":30195,
+    "charge_name":"COSMOLAN TRANX HOME CARE"
+  },
+  {
+    "code":30196,
+    "charge_name":"ALLRFIN AMP"
+  },
+  {
+    "code":30197,
+    "charge_name":"DAXAMESTHASON AMP"
+  },
+  {
+    "code":30198,
+    "charge_name":"Skin booster injection"
+  },
+  {
+    "code":30199,
+    "charge_name":"Skin booster injection offer"
+  },
+  {
+    "code":30200,
+    "charge_name":"STYLAGE FILLER 1ML"
+  },
+  {
+    "code":30201,
+    "charge_name":"ELECTROCAUTERY FOR SINGLE LESION"
+  },
+  {
+    "code":30202,
+    "charge_name":"ELECTROCAUTERY FOR 2 LESIONS"
+  },
+  {
+    "code":30203,
+    "charge_name":"ELECTROCAUTERY FOR 3 LESIONS"
+  },
+  {
+    "code":30204,
+    "charge_name":"SUBCISION+EXOSOM"
+  },
+  {
+    "code":30205,
+    "charge_name":"MCCN-PDRN-1ML"
+  },
+  {
+    "code":30207,
+    "charge_name":"KENALOUG INJECTION"
+  },
+  {
+    "code":30211,
+    "charge_name":"Genius treatment for face+exsomes+mask offer"
+  },
+  {
+    "code":30212,
+    "charge_name":"DERMAPEN"
+  },
+  {
+    "code":30222,
+    "charge_name":"ULTRAFORMER +SALMONDNA (supervision of Dr. Hani)"
+  },
+  {
+    "code":30225,
+    "charge_name":"PDRN INJECTON"
+  },
+  {
+    "code":30226,
+    "charge_name":"FRAX PRO+EXSOSOME+SUBCISION+MASK COCTAIL STEM CELLS OFFER"
+  },
+  {
+    "code":30227,
+    "charge_name":"BOTOX AROUND EYE OFFER"
+  },
+  {
+    "code":30228,
+    "charge_name":"BOTOX FULL FACE OFFER"
+  },
+  {
+    "code":30229,
+    "charge_name":"BOTOX FOREHEAD & AROUND EYE OFFER"
+  },
+  {
+    "code":30230,
+    "charge_name":"BOTOX NOSE OFFER"
+  },
+  {
+    "code":30231,
+    "charge_name":"JAWLINE BOTOX  (Nefertiti)OFFER"
+  },
+  {
+    "code":30232,
+    "charge_name":"BOTOX FORHEAD &AROUND EYE"
+  },
+  {
+    "code":30233,
+    "charge_name":"Tattoo Removal Small Area By Picoway offer  (supervision of Dr. Hani)"
+  },
+  {
+    "code":30234,
+    "charge_name":"Tattoo Removal Large Area By Picoway offer  (supervision of Dr. Hani)"
+  },
+  {
+    "code":30235,
+    "charge_name":"ACCURE TIP"
+  },
+  {
+    "code":30236,
+    "charge_name":"penthrox inhalation"
+  },
+  {
+    "code":30237,
+    "charge_name":"1ml exosomes topical"
+  },
+  {
+    "code":30238,
+    "charge_name":"Sefera Injection offer"
+  },
+  {
+    "code":30239,
+    "charge_name":"Sefera Injection"
+  },
+  {
+    "code":30240,
+    "charge_name":"Extra Mask for hydrofascial"
+  },
+  {
+    "code":30241,
+    "charge_name":"Deep cleansing for Sensitive skin"
+  },
+  {
+    "code":30242,
+    "charge_name":"Deep cleansing for oil skin"
+  },
+  {
+    "code":30243,
+    "charge_name":"Deep cleansing for acne - prone skin"
+  },
+  {
+    "code":30244,
+    "charge_name":"Mini facial session with a mask"
+  },
+  {
+    "code":30245,
+    "charge_name":"Deep facial cleansing with scrub and mask for hand,eyes,lips and face"
+  },
+  {
+    "code":30246,
+    "charge_name":"Mini facial session with eye care"
+  },
+  {
+    "code":30247,
+    "charge_name":"Deep cleansing session with peeling and skin tone unification"
+  },
+  {
+    "code":30248,
+    "charge_name":"Eye Care session"
+  },
+  {
+    "code":30249,
+    "charge_name":"Hadra session with deep facial cleansing and vitamin C Mask"
+  },
+  {
+    "code":30250,
+    "charge_name":"4 Deep facial cleansing sessions with an addtional session(eye)or(hand,lips,neck,collagen and eye)"
+  },
+  {
+    "code":30251,
+    "charge_name":"Haydra session for underarm area with whitening and brightening"
+  },
+  {
+    "code":30252,
+    "charge_name":"Haydra session for full back area with mask"
+  },
+  {
+    "code":30253,
+    "charge_name":"Tca Peeling small area offer"
+  },
+  {
+    "code":30254,
+    "charge_name":"Botox Full Face offer"
+  },
+  {
+    "code":30255,
+    "charge_name":"Genius treatment for face+exsomes+mask +stem cell offer"
+  }
+]

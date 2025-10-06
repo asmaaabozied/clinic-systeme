@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MedClinic Pro - Plastic Surgery Management</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="logo-container">
+                    <div class="logo-icon">
+                        <i class="fas fa-stethoscope"></i>
+                    </div>
+                    <div class="logo-text">
+                        <h2>MedClinic Pro</h2>
+                        <p>Plastic Surgery</p>
+                    </div>
+                </div>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <ul class="nav-menu">
+                    <li class="nav-item active" data-section="dashboard">
+                        <a href="#" class="nav-link">
+                            <i class="fas fa-chart-line"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="nav-item" data-section="patients">
+                        <a href="#" class="nav-link">
+                            <i class="fas fa-users"></i>
+                            <span>Patient Management</span>
+                        </a>
+                    </li>
+                    <li class="nav-item" data-section="surgical">
+                        <a href="#" class="nav-link">
+                            <i class="fas fa-cut"></i>
+                            <span>Surgical Planning</span>
+                        </a>
+                    </li>
+                    <li class="nav-item" data-section="imaging">
+                        <a href="#" class="nav-link">
+                            <i class="fas fa-camera"></i>
+                            <span>Imaging & Labs</span>
+                        </a>
+                    </li>
+                    <li class="nav-item" data-section="inventory">
+                        <a href="#" class="nav-link">
+                            <i class="fas fa-boxes"></i>
+                            <span>Inventory & Pharmacy</span>
+                        </a>
+                    </li>
+                    <li class="nav-item" data-section="scheduling">
+                        <a href="#" class="nav-link">
+                            <i class="fas fa-calendar"></i>
+                            <span>Scheduling</span>
+                        </a>
+                    </li>
+                    <li class="nav-item" data-section="billing">
+                        <a href="#" class="nav-link">
+                            <i class="fas fa-credit-card"></i>
+                            <span>Billing & Insurance</span>
+                        </a>
+                    </li>
+                    <li class="nav-item" data-section="communication">
+                        <a href="#" class="nav-link">
+                            <i class="fas fa-comments"></i>
+                            <span>Communication</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            
+            <div class="sidebar-footer">
+                <div class="user-profile" onclick="toggleUserMenu()">
+                    <div class="user-avatar">
+                        <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=40&h=40&fit=crop&crop=face" alt="Dr. Rodriguez">
+                    </div>
+                    <span class="user-name">Dr. Rodriguez</span>
+                    <i class="fas fa-chevron-up"></i>
+                </div>
+                <div class="user-menu" id="userMenu">
+                    <a href="#" class="menu-item">
+                        <i class="fas fa-user"></i>
+                        Profile
+                    </a>
+                    <a href="#" class="menu-item">
+                        <i class="fas fa-cog"></i>
+                        Settings
+                    </a>
+                    <hr>
+                    <a href="#" class="menu-item">
+                        <i class="fas fa-sign-out-alt"></i>
+                        Sign out
+                    </a>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="header">
+                <div class="header-left">
+                    <button class="sidebar-toggle" onclick="toggleSidebar()">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <div class="header-title">
+                        <h1>Dashboard</h1>
+                        <p>Welcome back, Dr. Rodriguez</p>
+                    </div>
+                </div>
+                
+                <div class="header-right">
+                    <div class="search-container">
+                        <i class="fas fa-search search-icon"></i>
+                        <input type="text" placeholder="Search patients..." class="search-input">
+                    </div>
+                    <button class="btn btn-primary">
+                        <i class="fas fa-plus"></i>
+                        New Consultation
+                    </button>
+                    <button class="btn btn-emergency">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        Emergency
+                    </button>
+                    <button class="btn btn-icon">
+                        <i class="fas fa-bell"></i>
+                    </button>
+                </div>
+            </header>
+
+            <!-- Content Area -->
+            <div class="content-area">
+                <!-- Tab Navigation -->
+                <div class="tab-navigation">
+                    <button class="tab-btn active" data-tab="overview">Overview</button>
+                    <button class="tab-btn" data-tab="patients">Patients</button>
+                    <button class="tab-btn" data-tab="surgical">Surgical</button>
+                    <button class="tab-btn" data-tab="inventory">Inventory</button>
+                </div>
+
+                <!-- Overview Tab -->
+                <div class="tab-content active" id="overview">
+                    <!-- Stats Cards -->
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-header">
+                                <span class="stat-title">Today's Patients</span>
+                                <i class="fas fa-users stat-icon" style="color: #3b82f6;"></i>
+                            </div>
+                            <div class="stat-value">12</div>
+                            <div class="stat-change">+2 from yesterday</div>
+                        </div>
+                        
+                        <div class="stat-card">
+                            <div class="stat-header">
+                                <span class="stat-title">Surgeries This Week</span>
+                                <i class="fas fa-cut stat-icon" style="color: #10b981;"></i>
+                            </div>
+                            <div class="stat-value">8</div>
+                            <div class="stat-change">3 scheduled tomorrow</div>
+                        </div>
+                        
+                        <div class="stat-card">
+                            <div class="stat-header">
+                                <span class="stat-title">Revenue This Month</span>
+                                <i class="fas fa-dollar-sign stat-icon" style="color: #f59e0b;"></i>
+                            </div>
+                            <div class="stat-value">$45,231</div>
+                            <div class="stat-change">+12% from last month</div>
+                        </div>
+                        
+                        <div class="stat-card">
+                            <div class="stat-header">
+                                <span class="stat-title">Patient Satisfaction</span>
+                                <i class="fas fa-chart-line stat-icon" style="color: #8b5cf6;"></i>
+                            </div>
+                            <div class="stat-value">98%</div>
+                            <div class="stat-change">+1% from last month</div>
+                        </div>
+                    </div>
+
+                    <!-- Main Dashboard Grid -->
+                    <div class="dashboard-grid">
+                        <!-- Recent Patients -->
+                        <div class="card recent-patients">
+                            <div class="card-header">
+                                <h3>Recent Patient Activity</h3>
+                                <p>Latest patient interactions and updates</p>
+                            </div>
+                            <div class="card-content">
+                                <div class="patient-list" id="recentPatients">
+                                    <!-- Populated by JavaScript -->
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Today's Schedule -->
+                        <div class="card schedule">
+                            <div class="card-header">
+                                <h3>Today's Schedule</h3>
+                                <p>Upcoming appointments</p>
+                            </div>
+                            <div class="card-content">
+                                <div class="appointment-list" id="todaySchedule">
+                                    <!-- Populated by JavaScript -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Inventory Alerts -->
+                    <div class="card inventory-alerts">
+                        <div class="card-header">
+                            <h3>Inventory Alerts</h3>
+                            <p>Items requiring attention</p>
+                        </div>
+                        <div class="card-content">
+                            <div class="alert-list" id="inventoryAlerts">
+                                <!-- Populated by JavaScript -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Patients Tab -->
+                <div class="tab-content" id="patients">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>Patient Management</h3>
+                            <p>Comprehensive patient records and treatment history</p>
+                        </div>
+                        <div class="card-content">
+                            <div class="table-controls">
+                                <div class="controls-left">
+                                    <div class="search-container">
+                                        <i class="fas fa-search search-icon"></i>
+                                        <input type="text" placeholder="Search patients..." class="search-input">
+                                    </div>
+                                    <button class="btn btn-outline">
+                                        <i class="fas fa-calendar"></i>
+                                        Filter by Date
+                                    </button>
+                                </div>
+                                <button class="btn btn-primary">
+                                    <i class="fas fa-plus"></i>
+                                    Add Patient
+                                </button>
+                            </div>
+                            
+                            <div class="table-container">
+                                <table class="data-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Patient</th>
+                                            <th>Procedure</th>
+                                            <th>Status</th>
+                                            <th>Last Visit</th>
+                                            <th>Progress</th>
+                                            <th>Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="patientsTable">
+                                        <!-- Populated by JavaScript -->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Surgical Tab -->
+                <div class="tab-content" id="surgical">
+                    <div class="surgical-grid">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3>Surgical Planning</h3>
+                                <p>Pre-operative planning and documentation</p>
+                            </div>
+                            <div class="card-content">
+                                <div class="planning-tools">
+                                    <div class="tool-item">
+                                        <i class="fas fa-file-alt"></i>
+                                        <div class="tool-content">
+                                            <h4>Rhinoplasty Template</h4>
+                                            <p>Pre-filled surgical notes</p>
+                                        </div>
+                                        <i class="fas fa-chevron-right"></i>
+                                    </div>
+                                    <div class="tool-item">
+                                        <i class="fas fa-camera"></i>
+                                        <div class="tool-content">
+                                            <h4>3D Imaging Viewer</h4>
+                                            <p>Simulation and planning</p>
+                                        </div>
+                                        <i class="fas fa-chevron-right"></i>
+                                    </div>
+                                    <div class="tool-item">
+                                        <i class="fas fa-file-contract"></i>
+                                        <div class="tool-content">
+                                            <h4>Consent Forms</h4>
+                                            <p>Auto-generate documents</p>
+                                        </div>
+                                        <i class="fas fa-chevron-right"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-header">
+                                <h3>Upcoming Surgeries</h3>
+                                <p>Scheduled procedures this week</p>
+                            </div>
+                            <div class="card-content">
+                                <div class="surgery-list" id="upcomingSurgeries">
+                                    <!-- Populated by JavaScript -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Inventory Tab -->
+                <div class="tab-content" id="inventory">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>Inventory Management</h3>
+                            <p>Track supplies, medications, and equipment</p>
+                        </div>
+                        <div class="card-content">
+                            <div class="table-controls">
+                                <div class="controls-left">
+                                    <div class="search-container">
+                                        <i class="fas fa-search search-icon"></i>
+                                        <input type="text" placeholder="Search inventory..." class="search-input">
+                                    </div>
+                                    <button class="btn btn-outline">
+                                        <i class="fas fa-boxes"></i>
+                                        Categories
+                                    </button>
+                                </div>
+                                <button class="btn btn-primary">
+                                    <i class="fas fa-plus"></i>
+                                    Add Item
+                                </button>
+                            </div>
+                            
+                            <div class="table-container">
+                                <table class="data-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Item</th>
+                                            <th>Current Stock</th>
+                                            <th>Threshold</th>
+                                            <th>Status</th>
+                                            <th>Last Updated</th>
+                                            <th>Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="inventoryTable">
+                                        <!-- Populated by JavaScript -->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Dropdown Menu (Hidden by default) -->
+    <div class="dropdown-menu" id="dropdownMenu">
+        <a href="#" class="dropdown-item">View Details</a>
+        <a href="#" class="dropdown-item">Edit Record</a>
+        <a href="#" class="dropdown-item">Schedule Follow-up</a>
+        <a href="#" class="dropdown-item">View Images</a>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

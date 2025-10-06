@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nurse Interface - Patient Assessment</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="light-mode">
+    <header>
+        <div class="header-content">
+            <h1>Patient Assessment</h1>
+            <div class="header-actions">
+                <button id="darkModeToggle" class="icon-button" aria-label="Toggle dark mode">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <form id="patientAssessmentForm">
+            <section class="card" id="patientInfoSection">
+                <h2>Patient Information</h2>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="patientName">Full Name</label>
+                        <input type="text" id="patientName" name="patientName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="patientId">Patient ID</label>
+                        <input type="text" id="patientId" name="patientId" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="patientAge">Age</label>
+                        <input type="number" id="patientAge" name="patientAge" min="0" max="120" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="patientGender">Gender</label>
+                        <select id="patientGender" name="patientGender" required>
+                            <option value="">Select</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="visitDate">Visit Date</label>
+                        <input type="date" id="visitDate" name="visitDate" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="visitTime">Visit Time</label>
+                        <input type="time" id="visitTime" name="visitTime" required>
+                    </div>
+                </div>
+            </section>
+
+            <section class="card" id="vitalSignsSection">
+                <h2>Vital Signs</h2>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="temperature">Temperature</label>
+                        <div class="input-with-unit">
+                            <input type="number" id="temperature" name="temperature" step="0.1" required>
+                            <select id="tempUnit" name="tempUnit">
+                                <option value="celsius">°C</option>
+                                <option value="fahrenheit">°F</option>
+                            </select>
+                        </div>
+                        <div class="normal-range">Normal: 36.1-37.2°C (97-99°F)</div>
+                    </div>
+                    <div class="form-group blood-pressure">
+                        <label>Blood Pressure</label>
+                        <div class="bp-inputs">
+                            <input type="number" id="systolic" name="systolic" placeholder="Systolic" min="70" max="220" required>
+                            <span>/</span>
+                            <input type="number" id="diastolic" name="diastolic" placeholder="Diastolic" min="40" max="120" required>
+                            <span>mmHg</span>
+                        </div>
+                        <div class="normal-range">Normal: 90-120/60-80 mmHg</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="heartRate">Heart Rate</label>
+                        <div class="input-with-unit">
+                            <input type="number" id="heartRate" name="heartRate" min="40" max="220" required>
+                            <span class="unit">BPM</span>
+                        </div>
+                        <div class="normal-range">Normal: 60-100 BPM</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="respiratoryRate">Respiratory Rate</label>
+                        <div class="input-with-unit">
+                            <input type="number" id="respiratoryRate" name="respiratoryRate" min="8" max="40" required>
+                            <span class="unit">breaths/min</span>
+                        </div>
+                        <div class="normal-range">Normal: 12-20 breaths/min</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="oxygenSaturation">Oxygen Saturation</label>
+                        <div class="input-with-unit">
+                            <input type="number" id="oxygenSaturation" name="oxygenSaturation" min="70" max="100" step="1" required>
+                            <span class="unit">%</span>
+                        </div>
+                        <div class="normal-range">Normal: ≥95%</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="weight">Weight</label>
+                        <div class="input-with-unit">
+                            <input type="number" id="weight" name="weight" step="0.1" min="0" required>
+                            <select id="weightUnit" name="weightUnit">
+                                <option value="kg">kg</option>
+                                <option value="lb">lb</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="height">Height</label>
+                        <div class="input-with-unit">
+                            <input type="number" id="height" name="height" step="0.01" min="0" required>
+                            <select id="heightUnit" name="heightUnit">
+                                <option value="m">m</option>
+                                <option value="cm">cm</option>
+                                <option value="ft">ft</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="bmi">BMI</label>
+                        <div class="input-with-unit">
+                            <input type="number" id="bmi" name="bmi" step="0.1" readonly>
+                            <span class="unit">kg/m²</span>
+                        </div>
+                        <div class="normal-range">Normal: 18.5-24.9 kg/m²</div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="card" id="riskAssessmentSection">
+                <h2>Risk Assessment</h2>
+                <div class="form-grid">
+                    <div class="form-group full-width">
+                        <label for="allergies">Allergies</label>
+                        <div class="input-with-dropdown">
+                            <input type="text" id="allergiesInput" placeholder="Type or select allergies">
+                            <select id="allergiesDropdown">
+                                <option value="">Select common allergy</option>
+                                <option value="Penicillin">Penicillin</option>
+                                <option value="Latex">Latex</option>
+                                <option value="Peanuts">Peanuts</option>
+                                <option value="Shellfish">Shellfish</option>
+                                <option value="Eggs">Eggs</option>
+                                <option value="NSAIDs">NSAIDs</option>
+                                <option value="Contrast Dye">Contrast Dye</option>
+                            </select>
+                        </div>
+                        <div id="allergiesList" class="tags-container"></div>
+                        <input type="hidden" id="allergies" name="allergies">
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label>Fall Risk Assessment</label>
+                        <div class="risk-scale">
+                            <div class="risk-option">
+                                <input type="radio" id="fallRiskLow" name="fallRisk" value="low" required>
+                                <label for="fallRiskLow" class="risk-label risk-low">Low</label>
+                            </div>
+                            <div class="risk-option">
+                                <input type="radio" id="fallRiskModerate" name="fallRisk" value="moderate">
+                                <label for="fallRiskModerate" class="risk-label risk-moderate">Moderate</label>
+                            </div>
+                            <div class="risk-option">
+                                <input type="radio" id="fallRiskHigh" name="fallRisk" value="high">
+                                <label for="fallRiskHigh" class="risk-label risk-high">High</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label for="painLevel">Pain Level (0-10)</label>
+                        <div class="pain-scale-container">
+                            <input type="range" id="painLevel" name="painLevel" min="0" max="10" value="0" class="pain-slider">
+                            <div class="pain-scale-labels">
+                                <span>0</span>
+                                <span>1</span>
+                                <span>2</span>
+                                <span>3</span>
+                                <span>4</span>
+                                <span>5</span>
+                                <span>6</span>
+                                <span>7</span>
+                                <span>8</span>
+                                <span>9</span>
+                                <span>10</span>
+                            </div>
+                        </div>
+                        <div class="pain-value">Current: <span id="painValue">0</span> - <span id="painText">No Pain</span></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Smoking Status</label>
+                        <div class="radio-group">
+                            <div class="radio-option">
+                                <input type="radio" id="smokingNever" name="smokingStatus" value="never" required>
+                                <label for="smokingNever">Never</label>
+                            </div>
+                            <div class="radio-option">
+                                <input type="radio" id="smokingFormer" name="smokingStatus" value="former">
+                                <label for="smokingFormer">Former</label>
+                            </div>
+                            <div class="radio-option">
+                                <input type="radio" id="smokingCurrent" name="smokingStatus" value="current">
+                                <label for="smokingCurrent">Current</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Alcohol Consumption</label>
+                        <select id="alcoholUse" name="alcoholUse" required>
+                            <option value="">Select</option>
+                            <option value="none">None</option>
+                            <option value="occasional">Occasional (1-2 drinks/week)</option>
+                            <option value="moderate">Moderate (3-7 drinks/week)</option>
+                            <option value="heavy">Heavy (>7 drinks/week)</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label>Chronic Conditions</label>
+                        <div class="checkbox-grid">
+                            <div class="checkbox-option">
+                                <input type="checkbox" id="conditionHypertension" name="chronicConditions" value="Hypertension">
+                                <label for="conditionHypertension">Hypertension</label>
+                            </div>
+                            <div class="checkbox-option">
+                                <input type="checkbox" id="conditionDiabetes" name="chronicConditions" value="Diabetes">
+                                <label for="conditionDiabetes">Diabetes</label>
+                            </div>
+                            <div class="checkbox-option">
+                                <input type="checkbox" id="conditionAsthma" name="chronicConditions" value="Asthma">
+                                <label for="conditionAsthma">Asthma</label>
+                            </div>
+                            <div class="checkbox-option">
+                                <input type="checkbox" id="conditionCOPD" name="chronicConditions" value="COPD">
+                                <label for="conditionCOPD">COPD</label>
+                            </div>
+                            <div class="checkbox-option">
+                                <input type="checkbox" id="conditionCHF" name="chronicConditions" value="CHF">
+                                <label for="conditionCHF">CHF</label>
+                            </div>
+                            <div class="checkbox-option">
+                                <input type="checkbox" id="conditionCKD" name="chronicConditions" value="CKD">
+                                <label for="conditionCKD">CKD</label>
+                            </div>
+                            <div class="checkbox-option">
+                                <input type="checkbox" id="conditionCancer" name="chronicConditions" value="Cancer">
+                                <label for="conditionCancer">Cancer</label>
+                            </div>
+                            <div class="checkbox-option">
+                                <input type="checkbox" id="conditionOther" name="chronicConditions" value="Other">
+                                <label for="conditionOther">Other</label>
+                            </div>
+                        </div>
+                        <div id="otherConditionContainer" style="display: none; margin-top: 10px;">
+                            <input type="text" id="otherCondition" placeholder="Specify other condition">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div id="alertsContainer"></div>
+
+            <section class="action-buttons">
+                <button type="button" id="resetButton" class="secondary-button">Reset Form</button>
+                <button type="button" id="alertDoctorButton" class="warning-button" disabled>Alert Doctor</button>
+                <button type="submit" id="submitButton" class="primary-button">Save & Submit</button>
+            </section>
+        </form>
+    </main>
+
+    <div id="notification" class="notification hidden">
+        <div class="notification-content">
+            <span id="notificationMessage"></span>
+            <button id="notificationClose">&times;</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

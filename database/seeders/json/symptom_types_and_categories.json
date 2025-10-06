@@ -1,0 +1,688 @@
+[
+  {
+    "symptom_type": "Respiratory",
+    "categories": [
+      {
+        "title": "Symptom Title",
+        "description": "Symptom Description"
+      },
+      {
+        "title": "Shortness of Breath",
+        "description": "Difficulty breathing or feeling like you cannot get enough air"
+      },
+      {
+        "title": "Wheezing",
+        "description": "High-pitched whistling sound when breathing"
+      },
+      {
+        "title": "Cough",
+        "description": "Sudden expulsion of air from the lungs"
+      },
+      {
+        "title": "Productive Cough",
+        "description": "Cough that produces mucus or phlegm"
+      },
+      {
+        "title": "Dry Cough",
+        "description": "Cough without mucus production"
+      },
+      {
+        "title": "Hemoptysis",
+        "description": "Coughing up blood from respiratory tract"
+      },
+      {
+        "title": "Chest Pain with Breathing",
+        "description": "Pain in chest that worsens with inspiration or expiration"
+      },
+      {
+        "title": "Rapid Breathing",
+        "description": "Abnormally fast breathing rate (tachypnea)"
+      },
+      {
+        "title": "Irregular Breathing",
+        "description": "Abnormal pattern of breathing"
+      },
+      {
+        "title": "Nasal Congestion",
+        "description": "Blockage of nasal passages"
+      }
+    ]
+  },
+  {
+    "symptom_type": "Cardiovascular",
+    "categories": [
+      {
+        "title": "Symptom Title",
+        "description": "Symptom Description"
+      },
+      {
+        "title": "Chest Pain/Discomfort",
+        "description": "Pain, pressure, or discomfort in the chest area"
+      },
+      {
+        "title": "Palpitations",
+        "description": "Awareness of heartbeat, often rapid or irregular"
+      },
+      {
+        "title": "Tachycardia",
+        "description": "Abnormally rapid heart rate"
+      },
+      {
+        "title": "Bradycardia",
+        "description": "Abnormally slow heart rate"
+      },
+      {
+        "title": "Irregular Heartbeat",
+        "description": "Irregular rhythm of heartbeat"
+      },
+      {
+        "title": "Syncope",
+        "description": "Temporary loss of consciousness due to insufficient blood flow to brain"
+      },
+      {
+        "title": "Presyncope",
+        "description": "Near-fainting sensation"
+      },
+      {
+        "title": "Peripheral Edema",
+        "description": "Swelling in extremities due to fluid retention"
+      },
+      {
+        "title": "Cyanosis",
+        "description": "Bluish discoloration of skin due to poor circulation"
+      },
+      {
+        "title": "Claudication",
+        "description": "Pain in legs when walking due to poor circulation"
+      }
+    ]
+  },
+  {
+    "symptom_type": "Gastrointestinal",
+    "categories": [
+      {
+        "title": "Symptom Title",
+        "description": "Symptom Description"
+      },
+      {
+        "title": "Abdominal Pain",
+        "description": "Pain in the abdomen"
+      },
+      {
+        "title": "Nausea",
+        "description": "Unpleasant sensation with urge to vomit"
+      },
+      {
+        "title": "Vomiting",
+        "description": "Forceful expulsion of stomach contents"
+      },
+      {
+        "title": "Diarrhea",
+        "description": "Frequent loose or watery bowel movements"
+      },
+      {
+        "title": "Constipation",
+        "description": "Infrequent or difficult bowel movements"
+      },
+      {
+        "title": "Heartburn",
+        "description": "Burning sensation in chest often after eating"
+      },
+      {
+        "title": "Dysphagia",
+        "description": "Difficulty swallowing"
+      },
+      {
+        "title": "Hematemesis",
+        "description": "Vomiting blood"
+      },
+      {
+        "title": "Melena",
+        "description": "Black, tarry stools containing digested blood"
+      },
+      {
+        "title": "Jaundice",
+        "description": "Yellowing of skin and eyes"
+      }
+    ]
+  },
+  {
+    "symptom_type": "Neurological",
+    "categories": [
+      {
+        "title": "Symptom Title",
+        "description": "Symptom Description"
+      },
+      {
+        "title": "Headache",
+        "description": "Pain in the head"
+      },
+      {
+        "title": "Dizziness",
+        "description": "Feeling lightheaded, unsteady, or woozy"
+      },
+      {
+        "title": "Vertigo",
+        "description": "Sensation of spinning or rotation"
+      },
+      {
+        "title": "Paresthesia",
+        "description": "Abnormal sensations like tingling, numbness, or \"pins and needles\""
+      },
+      {
+        "title": "Weakness",
+        "description": "Reduced muscle strength"
+      },
+      {
+        "title": "Tremor",
+        "description": "Involuntary rhythmic muscle movement"
+      },
+      {
+        "title": "Seizure",
+        "description": "Sudden, uncontrolled electrical disturbance in the brain"
+      },
+      {
+        "title": "Memory Loss",
+        "description": "Difficulty in remembering information"
+      },
+      {
+        "title": "Confusion",
+        "description": "Impaired orientation to time, place, or person"
+      },
+      {
+        "title": "Speech Disturbance",
+        "description": "Difficulty speaking or understanding speech"
+      }
+    ]
+  },
+  {
+    "symptom_type": "Musculoskeletal",
+    "categories": [
+      {
+        "title": "Symptom Title",
+        "description": "Symptom Description"
+      },
+      {
+        "title": "Joint Pain",
+        "description": "Pain in one or more joints"
+      },
+      {
+        "title": "Back Pain",
+        "description": "Pain in the back"
+      },
+      {
+        "title": "Neck Pain",
+        "description": "Pain in the neck"
+      },
+      {
+        "title": "Muscle Pain",
+        "description": "Pain in muscles (myalgia)"
+      },
+      {
+        "title": "Joint Stiffness",
+        "description": "Reduced range of motion in joints"
+      },
+      {
+        "title": "Joint Swelling",
+        "description": "Visible enlargement of joints"
+      },
+      {
+        "title": "Muscle Weakness",
+        "description": "Reduced strength in muscles"
+      },
+      {
+        "title": "Muscle Cramps",
+        "description": "Sudden, involuntary muscle contractions"
+      },
+      {
+        "title": "Limping",
+        "description": "Abnormal gait due to pain or weakness"
+      },
+      {
+        "title": "Limited Range of Motion",
+        "description": "Restricted movement of a joint"
+      }
+    ]
+  },
+  {
+    "symptom_type": "Dermatological",
+    "categories": [
+      {
+        "title": "Symptom Title",
+        "description": "Symptom Description"
+      },
+      {
+        "title": "Rash",
+        "description": "Area of irritated or swollen skin"
+      },
+      {
+        "title": "Pruritus",
+        "description": "Itchy skin"
+      },
+      {
+        "title": "Skin Lesion",
+        "description": "Abnormal growth or appearance of skin"
+      },
+      {
+        "title": "Skin Discoloration",
+        "description": "Abnormal coloration of skin"
+      },
+      {
+        "title": "Dry Skin",
+        "description": "Rough, flaky skin"
+      },
+      {
+        "title": "Excessive Sweating",
+        "description": "Abnormal amount of perspiration"
+      },
+      {
+        "title": "Hair Loss",
+        "description": "Thinning or loss of hair"
+      },
+      {
+        "title": "Nail Changes",
+        "description": "Abnormal appearance or growth of nails"
+      },
+      {
+        "title": "Skin Ulcer",
+        "description": "Open sore on the skin"
+      },
+      {
+        "title": "Vesicle",
+        "description": "Small fluid-filled blister on skin"
+      }
+    ]
+  },
+  {
+    "symptom_type": "Urinary",
+    "categories": [
+      {
+        "title": "Symptom Title",
+        "description": "Symptom Description"
+      },
+      {
+        "title": "Dysuria",
+        "description": "Painful urination"
+      },
+      {
+        "title": "Frequency",
+        "description": "Urinating more often than normal"
+      },
+      {
+        "title": "Urgency",
+        "description": "Sudden, compelling urge to urinate"
+      },
+      {
+        "title": "Hematuria",
+        "description": "Blood in urine"
+      },
+      {
+        "title": "Nocturia",
+        "description": "Excessive urination at night"
+      },
+      {
+        "title": "Incontinence",
+        "description": "Involuntary leakage of urine"
+      },
+      {
+        "title": "Polyuria",
+        "description": "Excessive urine production"
+      },
+      {
+        "title": "Oliguria",
+        "description": "Reduced urine output"
+      },
+      {
+        "title": "Hesitancy",
+        "description": "Difficulty starting urination"
+      },
+      {
+        "title": "Straining",
+        "description": "Need to force urination"
+      }
+    ]
+  },
+  {
+    "symptom_type": "Psychological",
+    "categories": [
+      {
+        "title": "Symptom Title",
+        "description": "Symptom Description"
+      },
+      {
+        "title": "Anxiety",
+        "description": "Feeling of worry, nervousness, or unease"
+      },
+      {
+        "title": "Depression",
+        "description": "Persistent feelings of sadness and loss of interest"
+      },
+      {
+        "title": "Insomnia",
+        "description": "Difficulty falling or staying asleep"
+      },
+      {
+        "title": "Fatigue",
+        "description": "Feeling of tiredness or exhaustion"
+      },
+      {
+        "title": "Irritability",
+        "description": "Easily annoyed or provoked to anger"
+      },
+      {
+        "title": "Mood Swings",
+        "description": "Rapid, extreme changes in mood"
+      },
+      {
+        "title": "Hallucinations",
+        "description": "Sensory experiences that appear real but are created by the mind"
+      },
+      {
+        "title": "Delusions",
+        "description": "False beliefs not based in reality"
+      },
+      {
+        "title": "Paranoia",
+        "description": "Extreme, irrational distrust of others"
+      },
+      {
+        "title": "Reduced Concentration",
+        "description": "Difficulty focusing on tasks"
+      }
+    ]
+  },
+  {
+    "symptom_type": "Endocrine and Metabolic",
+    "categories": [
+      {
+        "title": "Symptom Title",
+        "description": "Symptom Description"
+      },
+      {
+        "title": "Polydipsia",
+        "description": "Excessive thirst"
+      },
+      {
+        "title": "Polyphagia",
+        "description": "Excessive hunger"
+      },
+      {
+        "title": "Weight Loss",
+        "description": "Unintentional decrease in body weight"
+      },
+      {
+        "title": "Weight Gain",
+        "description": "Unintentional increase in body weight"
+      },
+      {
+        "title": "Heat Intolerance",
+        "description": "Unusual sensitivity to heat"
+      },
+      {
+        "title": "Cold Intolerance",
+        "description": "Unusual sensitivity to cold"
+      },
+      {
+        "title": "Gynecomastia",
+        "description": "Enlargement of breast tissue in males"
+      },
+      {
+        "title": "Hirsutism",
+        "description": "Excessive hair growth in women"
+      },
+      {
+        "title": "Menstrual Irregularities",
+        "description": "Abnormal menstrual cycles"
+      },
+      {
+        "title": "Increased Urination",
+        "description": "Frequent urination, often in large amounts"
+      }
+    ]
+  },
+  {
+    "symptom_type": "ENT (Ear, Nose, Throat)",
+    "categories": [
+      {
+        "title": "Symptom Title",
+        "description": "Symptom Description"
+      },
+      {
+        "title": "Sore Throat",
+        "description": "Pain or irritation in the throat"
+      },
+      {
+        "title": "Earache",
+        "description": "Pain in the ear"
+      },
+      {
+        "title": "Tinnitus",
+        "description": "Ringing or buzzing in the ears"
+      },
+      {
+        "title": "Hearing Loss",
+        "description": "Partial or complete inability to hear"
+      },
+      {
+        "title": "Rhinorrhea",
+        "description": "Runny nose"
+      },
+      {
+        "title": "Nasal Obstruction",
+        "description": "Blockage of nasal passages"
+      },
+      {
+        "title": "Sneezing",
+        "description": "Sudden, forceful, involuntary expulsion of air through nose and mouth"
+      },
+      {
+        "title": "Hoarseness",
+        "description": "Abnormal change in voice"
+      },
+      {
+        "title": "Epistaxis",
+        "description": "Nosebleed"
+      },
+      {
+        "title": "Dysphagia",
+        "description": "Difficulty swallowing"
+      }
+    ]
+  },
+  {
+    "symptom_type": "Ophthalmological",
+    "categories": [
+      {
+        "title": "Symptom Title",
+        "description": "Symptom Description"
+      },
+      {
+        "title": "Vision Loss",
+        "description": "Partial or complete loss of vision"
+      },
+      {
+        "title": "Blurred Vision",
+        "description": "Lack of sharpness of vision"
+      },
+      {
+        "title": "Double Vision",
+        "description": "Seeing two images of a single object"
+      },
+      {
+        "title": "Eye Pain",
+        "description": "Discomfort or pain in the eye"
+      },
+      {
+        "title": "Red Eye",
+        "description": "Redness of the eye"
+      },
+      {
+        "title": "Photophobia",
+        "description": "Sensitivity to light"
+      },
+      {
+        "title": "Floaters",
+        "description": "Spots in vision that drift through field of view"
+      },
+      {
+        "title": "Eye Discharge",
+        "description": "Secretion from the eye"
+      },
+      {
+        "title": "Dry Eyes",
+        "description": "Insufficient tear production"
+      },
+      {
+        "title": "Watery Eyes",
+        "description": "Excessive tear production"
+      }
+    ]
+  },
+  {
+    "symptom_type": "Constitutional",
+    "categories": [
+      {
+        "title": "Symptom Title",
+        "description": "Symptom Description"
+      },
+      {
+        "title": "Fever",
+        "description": "Elevated body temperature"
+      },
+      {
+        "title": "Chills",
+        "description": "Feeling of coldness with shivering"
+      },
+      {
+        "title": "Night Sweats",
+        "description": "Excessive sweating during sleep"
+      },
+      {
+        "title": "Fatigue",
+        "description": "Feeling of tiredness or exhaustion"
+      },
+      {
+        "title": "Malaise",
+        "description": "General feeling of discomfort or illness"
+      },
+      {
+        "title": "Weakness",
+        "description": "General lack of strength"
+      },
+      {
+        "title": "Anorexia",
+        "description": "Loss of appetite"
+      },
+      {
+        "title": "Weight Loss",
+        "description": "Unintentional decrease in body weight"
+      },
+      {
+        "title": "Cachexia",
+        "description": "Severe weight loss and muscle wasting"
+      },
+      {
+        "title": "Hypersomnia",
+        "description": "Excessive sleepiness"
+      }
+    ]
+  },
+  {
+    "symptom_type": "Reproductive",
+    "categories": [
+      {
+        "title": "Symptom Title",
+        "description": "Symptom Description"
+      },
+      {
+        "title": "Dyspareunia",
+        "description": "Painful sexual intercourse"
+      },
+      {
+        "title": "Menorrhagia",
+        "description": "Heavy menstrual bleeding"
+      },
+      {
+        "title": "Amenorrhea",
+        "description": "Absence of menstruation"
+      },
+      {
+        "title": "Vaginal Discharge",
+        "description": "Abnormal fluid from vagina"
+      },
+      {
+        "title": "Erectile Dysfunction",
+        "description": "Inability to achieve or maintain erection"
+      },
+      {
+        "title": "Testicular Pain",
+        "description": "Pain in one or both testicles"
+      },
+      {
+        "title": "Priapism",
+        "description": "Persistent, painful erection"
+      },
+      {
+        "title": "Breast Pain",
+        "description": "Discomfort or pain in the breast"
+      },
+      {
+        "title": "Breast Lump",
+        "description": "Palpable mass in the breast"
+      },
+      {
+        "title": "Abnormal Uterine Bleeding",
+        "description": "Bleeding from uterus not related to normal menstruation"
+      }
+    ]
+  },
+  {
+    "symptom_type": "Hematological",
+    "categories": [
+      {
+        "title": "Symptom Title",
+        "description": "Symptom Description"
+      },
+      {
+        "title": "Easy Bruising",
+        "description": "Tendency to bruise from minor trauma"
+      },
+      {
+        "title": "Petechiae",
+        "description": "Small, flat red or purple spots on skin due to bleeding"
+      },
+      {
+        "title": "Bleeding Gums",
+        "description": "Blood from gums, especially during brushing"
+      },
+      {
+        "title": "Prolonged Bleeding",
+        "description": "Bleeding that continues longer than expected"
+      },
+      {
+        "title": "Lymphadenopathy",
+        "description": "Enlarged lymph nodes"
+      },
+      {
+        "title": "Pallor",
+        "description": "Unusual paleness of skin"
+      },
+      {
+        "title": "Splenomegaly",
+        "description": "Enlarged spleen"
+      },
+      {
+        "title": "Hepatomegaly",
+        "description": "Enlarged liver"
+      },
+      {
+        "title": "Epistaxis",
+        "description": "Nosebleed"
+      },
+      {
+        "title": "Excessive Menstrual Bleeding",
+        "description": "Unusually heavy or prolonged menstrual periods"
+      }
+    ]
+  }
+]

@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Hospital - Patient Profile</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <div class="logo-section">
+                <div class="logo-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
+                        <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14h-4v-4H8v-2h2V9h4v2h2v2h-2v4z"/>
+                    </svg>
+                </div>
+                <h1 class="hospital-name">Smart Hospital & Research Center</h1>
+            </div>
+            
+            <div class="header-actions">
+                <div class="search-container">
+                    <input type="text" class="search-input" placeholder="Search By Patient Name" id="globalSearch">
+                    <button class="search-btn">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+                        </svg>
+                    </button>
+                </div>
+                
+                <div class="header-icons">
+                    <button class="icon-btn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
+                            <path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.9 2 2 2zm6-6v-5c0-3.07-1.64-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z"/>
+                        </svg>
+                    </button>
+                    <button class="icon-btn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
+                            <path d="M19.14,12.94c0.04-0.3,0.06-0.61,0.06-0.94c0-0.32-0.02-0.64-0.07-0.94l2.03-1.58c0.18-0.14,0.23-0.41,0.12-0.61 l-1.92-3.32c-0.12-0.22-0.37-0.29-0.59-0.22l-2.39,0.96c-0.5-0.38-1.03-0.7-1.62-0.94L14.4,2.81c-0.04-0.24-0.24-0.41-0.48-0.41 h-3.84c-0.24,0-0.43,0.17-0.47,0.41L9.25,5.35C8.66,5.59,8.12,5.92,7.63,6.29L5.24,5.33c-0.22-0.08-0.47,0-0.59,0.22L2.74,8.87 C2.62,9.08,2.66,9.34,2.86,9.48l2.03,1.58C4.84,11.36,4.82,11.68,4.82,12s0.02,0.64,0.07,0.94l-2.03,1.58 c-0.18,0.14-0.23,0.41-0.12,0.61l1.92,3.32c0.12,0.22,0.37,0.29,0.59,0.22l2.39-0.96c0.5,0.38,1.03,0.7,1.62,0.94l0.36,2.54 c0.05,0.24,0.24,0.41,0.48,0.41h3.84c0.24,0,0.44-0.17,0.47-0.41l0.36-2.54c0.59-0.24,1.13-0.56,1.62-0.94l2.39,0.96 c0.22,0.08,0.47,0,0.59-0.22l1.92-3.32c0.12-0.22,0.07-0.47-0.12-0.61L19.14,12.94z M12,15.6c-1.98,0-3.6-1.62-3.6-3.6 s1.62-3.6,3.6-3.6s3.6,1.62,3.6,3.6S13.98,15.6,12,15.6z"/>
+                        </svg>
+                    </button>
+                    <button class="icon-btn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
+                            <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Page 2: Patient Profile -->
+        <section class="page-section active" id="patient-profile">
+            <div class="breadcrumb">
+                <a href="index.html" class="breadcrumb-link" id="backToList">OPD Billing</a>
+                <span class="breadcrumb-separator">></span>
+                <span class="breadcrumb-current">Patient Profile</span>
+            </div>
+
+            <div class="patient-profile-section">
+                <div class="profile-header">
+                    <div class="profile-image">
+                        <div class="no-image">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="#9CA3AF">
+                                <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                            </svg>
+                            <div class="no-image-text">
+                                <p>NO IMAGE</p>
+                                <p>AVAILABLE</p>
+                            </div>
+                        </div>
+                        <h2 class="patient-name" id="patientName">Robin Dahlberg</h2>
+                    </div>
+                    
+                    <div class="profile-details">
+                        <div class="details-grid">
+                            <div class="detail-item">
+                                <label>Patient Id</label>
+                                <span id="patientId">844</span>
+                            </div>
+                            <div class="detail-item">
+                                <label>Marital Status</label>
+                                <span id="maritalStatus">-</span>
+                            </div>
+                            <div class="detail-item">
+                                <label>Email</label>
+                                <span id="patientEmail">robin090@gmail.com</span>
+                            </div>
+                            <div class="detail-item">
+                                <label>Age</label>
+                                <span id="patientAge">(As Of Date)</span>
+                            </div>
+                            <div class="detail-item">
+                                <label>Gender</label>
+                                <span id="patientGender">Male</span>
+                            </div>
+                            <div class="detail-item">
+                                <label>Phone</label>
+                                <span id="patientPhone">893559858</span>
+                            </div>
+                            <div class="detail-item">
+                                <label>Blood Group</label>
+                                <span id="bloodGroup">-</span>
+                            </div>
+                            <div class="detail-item">
+                                <label>Guardian Name</label>
+                                <span id="guardianName">-</span>
+                            </div>
+                            <div class="detail-item">
+                                <label>OPD No</label>
+                                <span id="opdNo">OPDN7182</span>
+                            </div>
+                            <div class="detail-item">
+                                <label>Consultant Doctor</label>
+                                <span id="consultantDoctor">Amit Singh (9009)</span>
+                            </div>
+                            <div class="detail-item">
+                                <label>Case</label>
+                                <span id="patientCase">-</span>
+                            </div>
+                            <div class="detail-item">
+                                <label>Address</label>
+                                <span id="patientAddress">-</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="visits-section">
+                <div class="section-header">
+                    <div class="tabs">
+                        <button class="tab active" data-tab="visits">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 8px;">
+                                <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
+                            </svg>
+                            Visits
+                        </button>
+                        <button class="tab" data-tab="charges">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 8px;">
+                                <path d="M7,15H9C9,16.08 10.37,17 12,17C13.63,17 15,16.08 15,15C15,13.9 13.96,13.5 11.76,12.97C9.64,12.44 7,11.78 7,9C7,7.21 8.47,5.69 10.5,5.18V3H13.5V5.18C15.53,5.69 17,7.21 17,9H15C15,7.92 13.63,7 12,7C10.37,7 9,7.92 9,9C9,10.1 10.04,10.5 12.24,11.03C14.36,11.56 17,12.22 17,15C17,16.79 15.53,18.31 13.5,18.82V21H10.5V18.82C8.47,18.31 7,16.79 7,15Z"/>
+                            </svg>
+                            Charges
+                        </button>
+                        <button class="tab" data-tab="payment">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 8px;">
+                                <path d="M20,8H4V6H20M20,18H4V12H20M20,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V6C22,4.89 21.1,4 20,4Z"/>
+                            </svg>
+                            Payment
+                        </button>
+                    </div>
+                    <button class="btn-primary" id="newVisitBtn">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 8px;">
+                            <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/>
+                        </svg>
+                        New Visit
+                    </button>
+                </div>
+
+                <div class="tab-content active" id="visits">
+                    <div class="table-controls">
+                        <div class="search-table">
+                            <input type="text" placeholder="Search..." class="table-search" id="visitsSearch">
+                        </div>
+                        <div class="table-actions">
+                            <select class="records-select">
+                                <option value="100">100</option>
+                                <option value="50">50</option>
+                                <option value="25">25</option>
+                                <option value="10">10</option>
+                            </select>
+                            <button class="action-btn" title="Export">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z"/>
+                                </svg>
+                            </button>
+                            <button class="action-btn" title="Copy">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M17,9H7V7H17M17,13H7V11H17M14,17H7V15H14M12,3A1,1 0 0,1 13,4A1,1 0 0,1 12,5A1,1 0 0,1 11,4A1,1 0 0,1 12,3M19,3H14.82C14.4,1.84 13.3,1 12,1C10.7,1 9.6,1.84 9.18,3H5A2,2 0 0,0 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5A2,2 0 0,0 19,3Z"/>
+                                </svg>
+                            </button>
+                            <button class="action-btn" title="PDF">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
+                                </svg>
+                            </button>
+                            <button class="action-btn" title="Print">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M6,2A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2H6M6,4H13V9H18V20H6V4Z"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="data-table">
+                        <table id="visitsTable">
+                            <thead>
+                                <tr>
+                                    <th>OPD No</th>
+                                    <th>Case ID</th>
+                                    <th>Appointment Date</th>
+                                    <th>Consultant Doctor</th>
+                                    <th>Reference</th>
+                                    <th>Symptoms</th>
+                                    <th>Previous Medical Issue</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="visit-row" data-visit-id="7182">
+                                    <td><a href="visit-details.html?visitId=7182" class="visit-link" data-visit-id="7182">OPDN7182</a></td>
+                                    <td>7209</td>
+                                    <td>06/30/2025 03:55 PM</td>
+                                    <td>Amit Singh (9009)</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>
+                                        <button class="action-btn view-visit" data-visit-id="7182" title="View Details">
+                                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                                <path d="M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9M12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17M12,4.5C7,4.5 2.73,7.61 1,12C2.73,16.39 7,19.5 12,19.5C17,19.5 21.27,16.39 23,12C21.27,7.61 17,4.5 12,4.5Z"/>
+                                            </svg>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr class="visit-row" data-visit-id="7086">
+                                    <td><a href="visit-details.html?visitId=7086" class="visit-link" data-visit-id="7086">OPDN7086</a></td>
+                                    <td>7111</td>
+                                    <td>05/30/2025 04:00 PM</td>
+                                    <td>Sonia Bush (9002)</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>
+                                        <button class="action-btn view-visit" data-visit-id="7086" title="View Details">
+                                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                                <path d="M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9M12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17M12,4.5C7,4.5 2.73,7.61 1,12C2.73,16.39 7,19.5 12,19.5C17,19.5 21.27,16.39 23,12C21.27,7.61 17,4.5 12,4.5Z"/>
+                                            </svg>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr class="visit-row" data-visit-id="7028">
+                                    <td><a href="visit-details.html?visitId=7028" class="visit-link" data-visit-id="7028">OPDN7028</a></td>
+                                    <td>7052</td>
+                                    <td>04/30/2025 04:00 PM</td>
+                                    <td>Sonia Bush (9002)</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td>
+                                        <button class="action-btn view-visit" data-visit-id="7028" title="View Details">
+                                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                                <path d="M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9M12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17M12,4.5C7,4.5 2.73,7.61 1,12C2.73,16.39 7,19.5 12,19.5C17,19.5 21.27,16.39 23,12C21.27,7.61 17,4.5 12,4.5Z"/>
+                                            </svg>
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        
+                        <div class="table-footer">
+                            <span>Records: 1 to 3 of 6</span>
+                            <div class="pagination">
+                                <button class="page-btn">‹</button>
+                                <button class="page-btn active">1</button>
+                                <button class="page-btn">2</button>
+                                <button class="page-btn">›</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-content" id="charges">
+                    <div class="empty-state">
+                        <h3>Charges Information</h3>
+                        <p>No charges recorded for this patient.</p>
+                    </div>
+                </div>
+
+                <div class="tab-content" id="payment">
+                    <div class="empty-state">
+                        <h3>Payment History</h3>
+                        <p>No payment history available.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- <script src="script.js"></script> -->
+</body>
+</html>

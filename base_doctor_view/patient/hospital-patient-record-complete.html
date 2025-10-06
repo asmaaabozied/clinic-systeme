@@ -1,0 +1,2347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital Patient Record Management System</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: #f5f7fa;
+            color: #333;
+        }
+
+        /* Header Styles */
+        .header {
+            background: linear-gradient(135deg, #4A90E2 0%, #5BA0F2 100%);
+            color: white;
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .top-nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+        }
+
+        .nav-left {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .hamburger {
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .hospital-name {
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        .search-bar {
+            display: flex;
+            align-items: center;
+            background: rgba(255,255,255,0.2);
+            border-radius: 25px;
+            padding: 0.5rem 1rem;
+            min-width: 300px;
+        }
+
+        .search-bar input {
+            background: none;
+            border: none;
+            color: white;
+            outline: none;
+            flex: 1;
+            margin-left: 0.5rem;
+        }
+
+        .search-bar input::placeholder {
+            color: rgba(255,255,255,0.8);
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .nav-icon {
+            position: relative;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+
+        .notification-badge {
+            position: absolute;
+            top: 0;
+            right: 0;
+            background: #ff4757;
+            color: white;
+            border-radius: 50%;
+            width: 18px;
+            height: 18px;
+            font-size: 0.7rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .secondary-nav {
+            background: rgba(255,255,255,0.1);
+            border-radius: 10px;
+            padding: 0.5rem;
+            display: flex;
+            gap: 0.5rem;
+            overflow-x: auto;
+        }
+
+        .nav-tab {
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: background-color 0.3s;
+        }
+
+        .nav-tab.active {
+            background: rgba(255,255,255,0.2);
+        }
+
+        .nav-tab:hover {
+            background: rgba(255,255,255,0.15);
+        }
+
+        /* Main Content */
+        .main-content {
+            display: grid;
+            grid-template-columns: 40% 60%;
+            gap: 2rem;
+            padding: 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        /* Patient Info Section */
+        .patient-section {
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            height: fit-content;
+            position: sticky;
+            top: 120px;
+        }
+
+        .patient-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid #e9ecef;
+        }
+
+        .patient-name {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+
+        .action-icons {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .action-icon {
+            padding: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .action-icon:hover {
+            background: #f8f9fa;
+            border-color: #4A90E2;
+        }
+
+        .patient-photo {
+            width: 120px;
+            height: 120px;
+            background: #e9ecef;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            color: #6c757d;
+            font-size: 0.8rem;
+            text-align: center;
+        }
+
+        .patient-details {
+            margin-bottom: 1.5rem;
+        }
+
+        .detail-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #f1f3f4;
+        }
+
+        .detail-label {
+            font-weight: 500;
+            color: #666;
+        }
+
+        .detail-value {
+            color: #333;
+        }
+
+        .case-info {
+            background: #f8f9fa;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+        }
+
+        .collapsible-section {
+            margin-bottom: 1rem;
+        }
+
+        .collapsible-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.75rem;
+            background: #f8f9fa;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .collapsible-header:hover {
+            background: #e9ecef;
+        }
+
+        .collapsible-content {
+            padding: 1rem;
+            background: white;
+            border: 1px solid #e9ecef;
+            border-top: none;
+            border-radius: 0 0 6px 6px;
+            display: none;
+        }
+
+        .collapsible-content.active {
+            display: block;
+        }
+
+        .consultant-doctor {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            background: #f8f9fa;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+        }
+
+        .doctor-photo {
+            width: 50px;
+            height: 50px;
+            background: #ddd;
+            border-radius: 50%;
+        }
+
+        .barcode-section {
+            display: flex;
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .barcode, .qr-code {
+            width: 80px;
+            height: 40px;
+            background: #000;
+            background-image: repeating-linear-gradient(90deg, #000 0px, #000 2px, #fff 2px, #fff 4px);
+            border-radius: 4px;
+        }
+
+        .qr-code {
+            background-image: repeating-linear-gradient(0deg, #000 0px, #000 2px, #fff 2px, #fff 4px),
+                              repeating-linear-gradient(90deg, #000 0px, #000 2px, #fff 2px, #fff 4px);
+        }
+
+        /* Tab Content */
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .medical-section {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        /* Cards and Grids */
+        .payment-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+
+        .payment-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+
+        .payment-title {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: #e9ecef;
+            border-radius: 4px;
+            margin-bottom: 0.5rem;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: #4A90E2;
+            border-radius: 4px;
+            transition: width 0.5s ease;
+        }
+
+        .payment-amount {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+
+        .payment-percentage {
+            font-size: 0.8rem;
+            color: #666;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Tables */
+        .table-container {
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            margin-bottom: 1.5rem;
+        }
+
+        .table-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #e9ecef;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 0.75rem;
+            text-align: left;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        th {
+            background: #f8f9fa;
+            font-weight: 600;
+            color: #666;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        th:hover {
+            background: #e9ecef;
+        }
+
+        tr:hover {
+            background: #f8f9fa;
+        }
+
+        /* Forms */
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: #333;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 1rem;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: #4A90E2;
+            box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.1);
+        }
+
+        .btn {
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+
+        .btn-primary {
+            background: #4A90E2;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #357abd;
+        }
+
+        .btn-secondary {
+            background: #6c757d;
+            color: white;
+        }
+
+        .btn-success {
+            background: #28a745;
+            color: white;
+        }
+
+        .btn-danger {
+            background: #dc3545;
+            color: white;
+        }
+
+        /* Status badges */
+        .status-badge {
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .status-completed {
+            background: #d4edda;
+            color: #155724;
+        }
+
+        .status-pending {
+            background: #fff3cd;
+            color: #856404;
+        }
+
+        .status-cancelled {
+            background: #f8d7da;
+            color: #721c24;
+        }
+
+        .status-active {
+            background: #cce5ff;
+            color: #004085;
+        }
+
+        /* Charts placeholder */
+        .chart-container {
+            height: 300px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        /* Timeline */
+        .timeline {
+            position: relative;
+            padding-left: 2rem;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 1rem;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: #e9ecef;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 2rem;
+            background: white;
+            padding: 1rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -1.75rem;
+            top: 1rem;
+            width: 12px;
+            height: 12px;
+            background: #4A90E2;
+            border-radius: 50%;
+            border: 3px solid white;
+            box-shadow: 0 0 0 3px #e9ecef;
+        }
+
+        .timeline-date {
+            font-size: 0.8rem;
+            color: #666;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-title {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Video call interface */
+        .video-call-container {
+            background: #000;
+            border-radius: 12px;
+            height: 400px;
+            position: relative;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+
+        .video-controls {
+            position: absolute;
+            bottom: 1rem;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 1rem;
+        }
+
+        .video-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .main-content {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+                padding: 1rem;
+            }
+
+            .payment-grid, .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .search-bar {
+                min-width: 200px;
+            }
+
+            .patient-section {
+                position: static;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                padding: 1rem;
+            }
+
+            .top-nav {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .secondary-nav {
+                flex-wrap: wrap;
+            }
+
+            .patient-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="top-nav">
+            <div class="nav-left">
+                <div class="hamburger">☰</div>
+                <div class="hospital-name">Smart Hospital & Research Center</div>
+            </div>
+            
+            <div class="search-bar">
+                <span>🔍</span>
+                <input type="text" placeholder="Search By Patient Name">
+            </div>
+            
+            <div class="nav-right">
+                <div class="nav-icon">🇺🇸</div>
+                <div class="nav-icon">
+                    🔔
+                    <div class="notification-badge">1</div>
+                </div>
+                <div class="nav-icon">📅</div>
+                <div class="nav-icon">👤</div>
+            </div>
+        </div>
+        
+        <div class="secondary-nav">
+            <div class="nav-tab active" data-tab="overview">Overview</div>
+            <div class="nav-tab" data-tab="visits">Visits</div>
+            <div class="nav-tab" data-tab="medication">Medication</div>
+            <div class="nav-tab" data-tab="lab-investigation">Lab Investigation</div>
+            <div class="nav-tab" data-tab="operations">Operations</div>
+            <div class="nav-tab" data-tab="charges">Charges</div>
+            <div class="nav-tab" data-tab="payments">Payments</div>
+            <div class="nav-tab" data-tab="live-consultation">Live Consultation</div>
+            <div class="nav-tab" data-tab="timeline">Timeline</div>
+            <div class="nav-tab" data-tab="treatment-history">Treatment History</div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Patient Information Section -->
+        <div class="patient-section">
+            <div class="patient-header">
+                <div class="patient-name">GEORGE PARKER (878)</div>
+                <div class="action-icons">
+                    <div class="action-icon">✏️</div>
+                    <div class="action-icon">🖨️</div>
+                    <div class="action-icon">💾</div>
+                </div>
+            </div>
+            
+            <div class="patient-photo">
+                NO IMAGE AVAILABLE
+            </div>
+            
+            <div class="patient-details">
+                <div class="detail-row">
+                    <span class="detail-label">Gender:</span>
+                    <span class="detail-value">Male</span>
+                </div>
+                <div class="detail-row">
+                    <span class="detail-label">Age:</span>
+                    <span class="detail-value">20 Year 10 Month 13 Days (As Of Date)</span>
+                </div>
+                <div class="detail-row">
+                    <span class="detail-label">Guardian Name:</span>
+                    <span class="detail-value">Shane</span>
+                </div>
+                <div class="detail-row">
+                    <span class="detail-label">Phone:</span>
+                    <span class="detail-value">073080914</span>
+                </div>
+                <div class="detail-row">
+                    <span class="detail-label">TPA:</span>
+                    <span class="detail-value">-</span>
+                </div>
+                <div class="detail-row">
+                    <span class="detail-label">TPA ID:</span>
+                    <span class="detail-value">123123</span>
+                </div>
+                <div class="detail-row">
+                    <span class="detail-label">TPA Validity:</span>
+                    <span class="detail-value">05/11/2024</span>
+                </div>
+            </div>
+
+            <div class="barcode-section">
+                <div>
+                    <div style="font-size: 0.8rem; margin-bottom: 0.5rem;">Barcode:</div>
+                    <div class="barcode"></div>
+                </div>
+                <div>
+                    <div style="font-size: 0.8rem; margin-bottom: 0.5rem;">QR Code:</div>
+                    <div class="qr-code"></div>
+                </div>
+            </div>
+            
+            <div class="case-info">
+                <div class="detail-row">
+                    <span class="detail-label">Case ID:</span>
+                    <span class="detail-value">7202</span>
+                </div>
+                <div class="detail-row">
+                    <span class="detail-label">OPD No:</span>
+                    <span class="detail-value">OPDN7176</span>
+                </div>
+            </div>
+            
+            <div class="collapsible-section">
+                <div class="collapsible-header" onclick="toggleCollapsible(this)">
+                    <span>Known Allergies</span>
+                    <span>▼</span>
+                </div>
+                <div class="collapsible-content">
+                    No known allergies recorded.
+                </div>
+            </div>
+            
+            <div class="collapsible-section">
+                <div class="collapsible-header" onclick="toggleCollapsible(this)">
+                    <span>Findings</span>
+                    <span>▼</span>
+                </div>
+                <div class="collapsible-content">
+                    Patient presents with stomach pain and symptoms consistent with typhoid fever. Further investigation recommended.
+                </div>
+            </div>
+            
+            <div class="collapsible-section">
+                <div class="collapsible-header" onclick="toggleCollapsible(this)">
+                    <span>Symptoms</span>
+                    <span>▼</span>
+                </div>
+                <div class="collapsible-content">
+                    Excessive thirst, abdominal discomfort, and general malaise reported by patient.
+                </div>
+            </div>
+            
+            <div class="consultant-doctor">
+                <div class="doctor-photo"></div>
+                <div>
+                    <div style="font-weight: 600;">Consultant Doctor</div>
+                    <div>Sonia Bush (9002)</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tab Content Container -->
+        <div class="tab-content-container">
+            <!-- Overview Tab -->
+            <div class="tab-content active" id="overview">
+                <div class="medical-section">
+                    <!-- Payment Cards -->
+                    <div class="payment-grid">
+                        <div class="payment-card">
+                            <div class="payment-title">OPD PAYMENT/BILLING</div>
+                            <div class="payment-percentage">100.00%</div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 100%"></div>
+                            </div>
+                            <div class="payment-amount">$136.80/$136.80</div>
+                        </div>
+                        
+                        <div class="payment-card">
+                            <div class="payment-title">PHARMACY PAYMENT/BILLING</div>
+                            <div class="payment-percentage">100.00%</div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 100%"></div>
+                            </div>
+                            <div class="payment-amount">$293.75/$293.75</div>
+                        </div>
+                        
+                        <div class="payment-card">
+                            <div class="payment-title">PATHOLOGY PAYMENT/BILLING</div>
+                            <div class="payment-percentage">0%</div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 0%"></div>
+                            </div>
+                            <div class="payment-amount">$0/$0</div>
+                        </div>
+                        
+                        <div class="payment-card">
+                            <div class="payment-title">RADIOLOGY PAYMENT/BILLING</div>
+                            <div class="payment-percentage">0%</div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 0%"></div>
+                            </div>
+                            <div class="payment-amount">$0/$0</div>
+                        </div>
+                        
+                        <div class="payment-card">
+                            <div class="payment-title">BLOOD BANK PAYMENT/BILLING</div>
+                            <div class="payment-percentage">0%</div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 0%"></div>
+                            </div>
+                            <div class="payment-amount">$0/$0</div>
+                        </div>
+                        
+                        <div class="payment-card">
+                            <div class="payment-title">AMBULANCE PAYMENT/BILLING</div>
+                            <div class="payment-percentage">0%</div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 0%"></div>
+                            </div>
+                            <div class="payment-amount">$0/$0</div>
+                        </div>
+                    </div>
+
+                    <!-- Quick Summary Tables -->
+                    <div class="table-container">
+                        <div class="table-title">RECENT MEDICATION</div>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Date</th>
+                                    <th>Medicine Name</th>
+                                    <th>Dose</th>
+                                    <th>Time</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>06/05/2025</td>
+                                    <td>Alprovit</td>
+                                    <td>1 (CT)</td>
+                                    <td>03:07 PM</td>
+                                    <td><span class="status-badge status-completed">Completed</span></td>
+                                </tr>
+                                <tr>
+                                    <td>06/05/2025</td>
+                                    <td>BICASOL</td>
+                                    <td>0.5 (CT)</td>
+                                    <td>07:07 PM</td>
+                                    <td><span class="status-badge status-pending">Pending</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="table-container">
+                        <div class="table-title">RECENT OPERATIONS</div>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Reference No</th>
+                                    <th>Operation Date</th>
+                                    <th>Operation Name</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>OTREF302</td>
+                                    <td>06/05/2025 08:30 PM</td>
+                                    <td>Tooth extraction</td>
+                                    <td><span class="status-badge status-completed">Completed</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Visits Tab -->
+            <div class="tab-content" id="visits">
+                <div class="medical-section">
+                    <div class="stats-grid">
+                        <div class="card">
+                            <h3>Total Visits</h3>
+                            <div style="font-size: 2rem; font-weight: bold; color: #4A90E2;">15</div>
+                        </div>
+                        <div class="card">
+                            <h3>This Month</h3>
+                            <div style="font-size: 2rem; font-weight: bold; color: #28a745;">3</div>
+                        </div>
+                        <div class="card">
+                            <h3>Last Visit</h3>
+                            <div style="font-size: 1.2rem; font-weight: bold;">06/05/2025</div>
+                        </div>
+                        <div class="card">
+                            <h3>Next Appointment</h3>
+                            <div style="font-size: 1.2rem; font-weight: bold;">15/05/2025</div>
+                        </div>
+                    </div>
+
+                    <div class="table-container">
+                        <div class="table-title">VISIT HISTORY</div>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Visit Date</th>
+                                    <th>Visit Type</th>
+                                    <th>Doctor</th>
+                                    <th>Department</th>
+                                    <th>Diagnosis</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>06/05/2025</td>
+                                    <td>Follow-up</td>
+                                    <td>Dr. Sonia Bush</td>
+                                    <td>General Medicine</td>
+                                    <td>Typhoid Fever</td>
+                                    <td><span class="status-badge status-completed">Completed</span></td>
+                                </tr>
+                                <tr>
+                                    <td>28/04/2025</td>
+                                    <td>Initial Consultation</td>
+                                    <td>Dr. Sonia Bush</td>
+                                    <td>General Medicine</td>
+                                    <td>Abdominal Pain</td>
+                                    <td><span class="status-badge status-completed">Completed</span></td>
+                                </tr>
+                                <tr>
+                                    <td>15/04/2025</td>
+                                    <td>Emergency</td>
+                                    <td>Dr. John Smith</td>
+                                    <td>Emergency</td>
+                                    <td>Acute Gastritis</td>
+                                    <td><span class="status-badge status-completed">Completed</span></td>
+                                </tr>
+                                <tr>
+                                    <td>15/05/2025</td>
+                                    <td>Follow-up</td>
+                                    <td>Dr. Sonia Bush</td>
+                                    <td>General Medicine</td>
+                                    <td>-</td>
+                                    <td><span class="status-badge status-pending">Scheduled</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="card">
+                        <h3>Schedule New Appointment</h3>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem;">
+                            <div class="form-group">
+                                <label class="form-label">Date</label>
+                                <input type="date" class="form-input">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Time</label>
+                                <input type="time" class="form-input">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Doctor</label>
+                                <select class="form-input">
+                                    <option>Dr. Sonia Bush</option>
+                                    <option>Dr. John Smith</option>
+                                    <option>Dr. Sarah Johnson</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Visit Type</label>
+                                <select class="form-input">
+                                    <option>Follow-up</option>
+                                    <option>Initial Consultation</option>
+                                    <option>Emergency</option>
+                                </select>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary" style="margin-top: 1rem;">Schedule Appointment</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Medication Tab -->
+            <div class="tab-content" id="medication">
+                <div class="medical-section">
+                    <div class="stats-grid">
+                        <div class="card">
+                            <h3>Active Medications</h3>
+                            <div style="font-size: 2rem; font-weight: bold; color: #4A90E2;">5</div>
+                        </div>
+                        <div class="card">
+                            <h3>Completed Today</h3>
+                            <div style="font-size: 2rem; font-weight: bold; color: #28a745;">2</div>
+                        </div>
+                        <div class="card">
+                            <h3>Pending Today</h3>
+                            <div style="font-size: 2rem; font-weight: bold; color: #ffc107;">3</div>
+                        </div>
+                        <div class="card">
+                            <h3>Allergies</h3>
+                            <div style="font-size: 2rem; font-weight: bold; color: #dc3545;">0</div>
+                        </div>
+                    </div>
+
+                    <div class="table-container">
+                        <div class="table-title">CURRENT MEDICATIONS</div>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Medicine Name</th>
+                                    <th>Dosage</th>
+                                    <th>Frequency</th>
+                                    <th>Start Date</th>
+                                    <th>End Date</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Alprovit</td>
+                                    <td>1 Tablet</td>
+                                    <td>Twice Daily</td>
+                                    <td>01/05/2025</td>
+                                    <td>15/05/2025</td>
+                                    <td><span class="status-badge status-active">Active</span></td>
+                                    <td><button class="btn btn-primary" style="padding: 0.25rem 0.5rem; font-size: 0.8rem;">Mark Taken</button></td>
+                                </tr>
+                                <tr>
+                                    <td>BICASOL</td>
+                                    <td>0.5 Tablet</td>
+                                    <td>Once Daily</td>
+                                    <td>03/05/2025</td>
+                                    <td>20/05/2025</td>
+                                    <td><span class="status-badge status-active">Active</span></td>
+                                    <td><button class="btn btn-primary" style="padding: 0.25rem 0.5rem; font-size: 0.8rem;">Mark Taken</button></td>
+                                </tr>
+                                <tr>
+                                    <td>Paracetamol</td>
+                                    <td>500mg</td>
+                                    <td>As needed</td>
+                                    <td>28/04/2025</td>
+                                    <td>-</td>
+                                    <td><span class="status-badge status-active">Active</span></td>
+                                    <td><button class="btn btn-primary" style="padding: 0.25rem 0.5rem; font-size: 0.8rem;">Mark Taken</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="table-container">
+                        <div class="table-title">MEDICATION HISTORY</div>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Date</th>
+                                    <th>Medicine Name</th>
+                                    <th>Dose</th>
+                                    <th>Time Taken</th>
+                                    <th>Prescribed By</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>06/05/2025</td>
+                                    <td>Alprovit</td>
+                                    <td>1 (CT)</td>
+                                    <td>03:07 PM</td>
+                                    <td>Dr. Sonia Bush</td>
+                                    <td><span class="status-badge status-completed">Taken</span></td>
+                                </tr>
+                                <tr>
+                                    <td>06/05/2025</td>
+                                    <td>BICASOL</td>
+                                    <td>0.5 (CT)</td>
+                                    <td>07:07 PM</td>
+                                    <td>Dr. Sonia Bush</td>
+                                    <td><span class="status-badge status-pending">Pending</span></td>
+                                </tr>
+                                <tr>
+                                    <td>05/05/2025</td>
+                                    <td>Paracetamol</td>
+                                    <td>500mg</td>
+                                    <td>02:30 PM</td>
+                                    <td>Dr. Sonia Bush</td>
+                                    <td><span class="status-badge status-completed">Taken</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="card">
+                        <h3>Add New Medication</h3>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem;">
+                            <div class="form-group">
+                                <label class="form-label">Medicine Name</label>
+                                <input type="text" class="form-input" placeholder="Enter medicine name">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Dosage</label>
+                                <input type="text" class="form-input" placeholder="e.g., 500mg">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Frequency</label>
+                                <select class="form-input">
+                                    <option>Once Daily</option>
+                                    <option>Twice Daily</option>
+                                    <option>Three Times Daily</option>
+                                    <option>As Needed</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Duration (Days)</label>
+                                <input type="number" class="form-input" placeholder="7">
+                            </div>
+                        </div>
+                        <button class="btn btn-primary" style="margin-top: 1rem;">Add Medication</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Lab Investigation Tab -->
+            <div class="tab-content" id="lab-investigation">
+                <div class="medical-section">
+                    <div class="stats-grid">
+                        <div class="card">
+                            <h3>Total Tests</h3>
+                            <div style="font-size: 2rem; font-weight: bold; color: #4A90E2;">12</div>
+                        </div>
+                        <div class="card">
+                            <h3>Pending Results</h3>
+                            <div style="font-size: 2rem; font-weight: bold; color: #ffc107;">2</div>
+                        </div>
+                        <div class="card">
+                            <h3>Completed</h3>
+                            <div style="font-size: 2rem; font-weight: bold; color: #28a745;">10</div>
+                        </div>
+                        <div class="card">
+                            <h3>Abnormal Results</h3>
+                            <div style="font-size: 2rem; font-weight: bold; color: #dc3545;">1</div>
+                        </div>
+                    </div>
+
+                    <div class="table-container">
+                        <div class="table-title">RECENT LAB TESTS</div>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Test Name</th>
+                                    <th>Test Date</th>
+                                    <th>Lab</th>
+                                    <th>Sample Collected</th>
+                                    <th>Expected Date</th>
+                                    <th>Status</th>
+                                    <th>Results</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Complete Blood Count</td>
+                                    <td>05/05/2025</td>
+                                    <td>Central Lab</td>
+                                    <td>05/05/2025 09:00 AM</td>
+                                    <td>06/05/2025</td>
+                                    <td><span class="status-badge status-completed">Completed</span></td>
+                                    <td><button class="btn btn-primary" style="padding: 0.25rem 0.5rem; font-size: 0.8rem;">View</button></td>
+                                </tr>
+                                <tr>
+                                    <td>Typhoid Test</td>
+                                    <td>04/05/2025</td>
+                                    <td>Microbiology Lab</td>
+                                    <td>04/05/2025 10:30 AM</td>
+                                    <td>06/05/2025</td>
+                                    <td><span class="status-badge status-completed">Completed</span></td>
+                                    <td><button class="btn btn-danger" style="padding: 0.25rem 0.5rem; font-size: 0.8rem;">Positive</button></td>
+                                </tr>
+                                <tr>
+                                    <td>Liver Function Test</td>
+                                    <td>06/05/2025</td>
+                                    <td>Biochemistry Lab</td>
+                                    <td>06/05/2025 08:00 AM</td>
+                                    <td>07/05/2025</td>
+                                    <td><span class="status-badge status-pending">Processing</span></td>
+                                    <td>-</td>
+                                </tr>
+                                <tr>
+                                    <td>Stool Culture</td>
+                                    <td>06/05/2025</td>
+                                    <td>Microbiology Lab</td>
+                                    <td>06/05/2025 11:00 AM</td>
+                                    <td>09/05/2025</td>
+                                    <td><span class="status-badge status-pending">Processing</span></td>
+                                    <td>-</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="table-container">
+                        <div class="table-title">LAB RESULTS SUMMARY</div>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Parameter</th>
+                                    <th>Result</th>
+                                    <th>Normal Range</th>
+                                    <th>Unit</th>
+                                    <th>Status</th>
+                                    <th>Date</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Hemoglobin</td>
+                                    <td>12.5</td>
+                                    <td>12.0-15.5</td>
+                                    <td>g/dL</td>
+                                    <td><span class="status-badge status-completed">Normal</span></td>
+                                    <td>05/05/2025</td>
+                                </tr>
+                                <tr>
+                                    <td>White Blood Cells</td>
+                                    <td>11,200</td>
+                                    <td>4,000-11,000</td>
+                                    <td>/μL</td>
+                                    <td><span class="status-badge status-pending">High</span></td>
+                                    <td>05/05/2025</td>
+                                </tr>
+                                <tr>
+                                    <td>Platelets</td>
+                                    <td>250,000</td>
+                                    <td>150,000-450,000</td>
+                                    <td>/μL</td>
+                                    <td><span class="status-badge status-completed">Normal</span></td>
+                                    <td>05/05/2025</td>
+                                </tr>
+                                <tr>
+                                    <td>Typhoid IgM</td>
+                                    <td>Positive</td>
+                                    <td>Negative</td>
+                                    <td>-</td>
+                                    <td><span class="status-badge status-cancelled">Positive</span></td>
+                                    <td>04/05/2025</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="card">
+                        <h3>Order New Lab Test</h3>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem;">
+                            <div class="form-group">
+                                <label class="form-label">Test Category</label>
+                                <select class="form-input">
+                                    <option>Hematology</option>
+                                    <option>Biochemistry</option>
+                                    <option>Microbiology</option>
+                                    <option>Immunology</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Specific Test</label>
+                                <select class="form-input">
+                                    <option>Complete Blood Count</option>
+                                    <option>Liver Function Test</option>
+                                    <option>Kidney Function Test</option>
+                                    <option>Lipid Profile</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Priority</label>
+                                <select class="form-input">
+                                    <option>Routine</option>
+                                    <option>Urgent</option>
+                                    <option>STAT</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Sample Type</label>
+                                <select class="form-input">
+                                    <option>Blood</option>
+                                    <option>Urine</option>
+                                    <option>Stool</option>
+                                    <option>Sputum</option>
+                                </select>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary" style="margin-top: 1rem;">Order Test</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Operations Tab -->
+            <div class="tab-content" id="operations">
+                <div class="medical-section">
+                    <div class="stats-grid">
+                        <div class="card">
+                            <h3>Total Operations</h3>
+                            <div style="font-size: 2rem; font-weight: bold; color: #4A90E2;">3</div>
+                        </div>
+                        <div class="card">
+                            <h3>Completed</h3>
+                            <div style="font-size: 2rem; font-weight: bold; color: #28a745;">2</div>
+                        </div>
+                        <div class="card">
+                            <h3>Scheduled</h3>
+                            <div style="font-size: 2rem; font-weight: bold; color: #ffc107;">1</div>
+                        </div>
+                        <div class="card">
+                            <h3>Success Rate</h3>
+                            <div style="font-size: 2rem; font-weight: bold; color: #28a745;">100%</div>
+                        </div>
+                    </div>
+
+                    <div class="table-container">
+                        <div class="table-title">OPERATION HISTORY</div>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Reference No</th>
+                                    <th>Operation Date</th>
+                                    <th>Operation Name</th>
+                                    <th>Category</th>
+                                    <th>Surgeon</th>
+                                    <th>OT Technician</th>
+                                    <th>Duration</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>OTREF302</td>
+                                    <td>06/05/2025 08:30 PM</td>
+                                    <td>Tooth extraction</td>
+                                    <td>ENT and Oral Surgery</td>
+                                    <td>Dr. Michael Brown</td>
+                                    <td>Vinay</td>
+                                    <td>45 min</td>
+                                    <td><span class="status-badge status-completed">Completed</span></td>
+                                </tr>
+                                <tr>
+                                    <td>OTREF298</td>
+                                    <td>15/04/2025 02:00 PM</td>
+                                    <td>Appendectomy</td>
+                                    <td>General Surgery</td>
+                                    <td>Dr. Sarah Wilson</td>
+                                    <td>Kumar</td>
+                                    <td>90 min</td>
+                                    <td><span class="status-badge status-completed">Completed</span></td>
+                                </tr>
+                                <tr>
+                                    <td>OTREF310</td>
+                                    <td>20/05/2025 10:00 AM</td>
+                                    <td>Follow-up Procedure</td>
+                                    <td>General Surgery</td>
+                                    <td>Dr. Sarah Wilson</td>
+                                    <td>TBD</td>
+                                    <td>30 min (Est.)</td>
+                                    <td><span class="status-badge status-pending">Scheduled</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="table-container">
+                        <div class="table-title">PRE-OPERATIVE CHECKLIST</div>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Item</th>
+                                    <th>Status</th>
+                                    <th>Date Completed</th>
+                                    <th>Completed By</th>
+                                    <th>Notes</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Pre-operative Assessment</td>
+                                    <td><span class="status-badge status-completed">Completed</span></td>
+                                    <td>05/05/2025</td>
+                                    <td>Dr. Sonia Bush</td>
+                                    <td>Patient cleared for surgery</td>
+                                </tr>
+                                <tr>
+                                    <td>Anesthesia Consultation</td>
+                                    <td><span class="status-badge status-completed">Completed</span></td>
+                                    <td>05/05/2025</td>
+                                    <td>Dr. James Miller</td>
+                                    <td>Local anesthesia recommended</td>
+                                </tr>
+                                <tr>
+                                    <td>Consent Form</td>
+                                    <td><span class="status-badge status-completed">Completed</span></td>
+                                    <td>06/05/2025</td>
+                                    <td>Nurse Jennifer</td>
+                                    <td>Signed by patient and guardian</td>
+                                </tr>
+                                <tr>
+                                    <td>NPO Status</td>
+                                    <td><span class="status-badge status-completed">Completed</span></td>
+                                    <td>06/05/2025</td>
+                                    <td>Nurse Jennifer</td>
+                                    <td>8 hours fasting confirmed</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="card">
+                        <h3>Schedule New Operation</h3>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem;">
+                            <div class="form-group">
+                                <label class="form-label">Operation Type</label>
+                                <select class="form-input">
+                                    <option>Minor Surgery</option>
+                                    <option>Major Surgery</option>
+                                    <option>Emergency Surgery</option>
+                                    <option>Day Surgery</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Surgeon</label>
+                                <select class="form-input">
+                                    <option>Dr. Sarah Wilson</option>
+                                    <option>Dr. Michael Brown</option>
+                                    <option>Dr. Robert Davis</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Date</label>
+                                <input type="date" class="form-input">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Time</label>
+                                <input type="time" class="form-input">
+                            </div>
+                        </div>
+                        <div class="form-group" style="margin-top: 1rem;">
+                            <label class="form-label">Operation Details</label>
+                            <textarea class="form-input" rows="3" placeholder="Enter operation details and notes"></textarea>
+                        </div>
+                        <button class="btn btn-primary" style="margin-top: 1rem;">Schedule Operation</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Charges Tab -->
+            <div class="tab-content" id="charges">
+                <div class="medical-section">
+                    <div class="stats-grid">
+                        <div class="card">
+                            <h3>Total Charges</h3>
+                            <div style="font-size: 2rem; font-weight: bold; color: #4A90E2;">$1,245.80</div>
+                        </div>
+                        <div class="card">
+                            <h3>Paid Amount</h3>
+                            <div style="font-size: 2rem; font-weight: bold; color: #28a745;">$430.55</div>
+                        </div>
+                        <div class="card">
+                            <h3>Outstanding</h3>
+                            <div style="font-size: 2rem; font-weight: bold; color: #dc3545;">$815.25</div>
+                        </div>
+                        <div class="card">
+                            <h3>Insurance Coverage</h3>
+                            <div style="font-size: 2rem; font-weight: bold; color: #ffc107;">65%</div>
+                        </div>
+                    </div>
+
+                    <div class="table-container">
+                        <div class="table-title">DETAILED CHARGES</div>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Date</th>
+                                    <th>Service Name</th>
+                                    <th>Charge Type</th>
+                                    <th>Standard Charge ($)</th>
+                                    <th>Tax (%)</th>
+                                    <th>Tax Amount ($)</th>
+                                    <th>Applied Charge ($)</th>
+                                    <th>Total Amount ($)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>06/05/2025</td>
+                                    <td>Appointment Fees</td>
+                                    <td>Consultation</td>
+                                    <td>123.00</td>
+                                    <td>20.00</td>
+                                    <td>24.60</td>
+                                    <td>123.00</td>
+                                    <td>136.80</td>
+                                </tr>
+                                <tr>
+                                    <td>06/05/2025</td>
+                                    <td>Tooth Extraction</td>
+                                    <td>Surgery</td>
+                                    <td>450.00</td>
+                                    <td>18.00</td>
+                                    <td>81.00</td>
+                                    <td>450.00</td>
+                                    <td>531.00</td>
+                                </tr>
+                                <tr>
+                                    <td>05/05/2025</td>
+                                    <td>Complete Blood Count</td>
+                                    <td>Laboratory</td>
+                                    <td>85.00</td>
+                                    <td>12.00</td>
+                                    <td>10.20</td>
+                                    <td>85.00</td>
+                                    <td>95.20</td>
+                                </tr>
+                                <tr>
+                                    <td>04/05/2025</td>
+                                    <td>Typhoid Test</td>
+                                    <td>Laboratory</td>
+                                    <td>65.00</td>
+                                    <td>12.00</td>
+                                    <td>7.80</td>
+                                    <td>65.00</td>
+                                    <td>72.80</td>
+                                </tr>
+                                <tr>
+                                    <td>01/05/2025</td>
+                                    <td>Medication - Alprovit</td>
+                                    <td>Pharmacy</td>
+                                    <td>125.00</td>
+                                    <td>15.00</td>
+                                    <td>18.75</td>
+                                    <td>125.00</td>
+                                    <td>143.75</td>
+                                </tr>
+                                <tr>
+                                    <td>01/05/2025</td>
+                                    <td>Medication - BICASOL</td>
+                                    <td>Pharmacy</td>
+                                    <td>150.00</td>
+                                    <td>15.00</td>
+                                    <td>22.50</td>
+                                    <td>150.00</td>
+                                    <td>172.50</td>
+                                </tr>
+                                <tr>
+                                    <td>15/04/2025</td>
+                                    <td>Emergency Consultation</td>
+                                    <td>Emergency</td>
+                                    <td>200.00</td>
+                                    <td>20.00</td>
+                                    <td>40.00</td>
+                                    <td>200.00</td>
+                                    <td>240.00</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="table-container">
+                        <div class="table-title">CHARGE CATEGORIES</div>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Category</th>
+                                    <th>Number of Items</th>
+                                    <th>Subtotal ($)</th>
+                                    <th>Tax ($)</th>
+                                    <th>Total ($)</th>
+                                    <th>Percentage</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Consultation</td>
+                                    <td>2</td>
+                                    <td>323.00</td>
+                                    <td>64.60</td>
+                                    <td>376.80</td>
+                                    <td>30.3%</td>
+                                </tr>
+                                <tr>
+                                    <td>Surgery</td>
+                                    <td>1</td>
+                                    <td>450.00</td>
+                                    <td>81.00</td>
+                                    <td>531.00</td>
+                                    <td>42.6%</td>
+                                </tr>
+                                <tr>
+                                    <td>Laboratory</td>
+                                    <td>2</td>
+                                    <td>150.00</td>
+                                    <td>18.00</td>
+                                    <td>168.00</td>
+                                    <td>13.5%</td>
+                                </tr>
+                                <tr>
+                                    <td>Pharmacy</td>
+                                    <td>2</td>
+                                    <td>275.00</td>
+                                    <td>41.25</td>
+                                    <td>316.25</td>
+                                    <td>25.4%</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="card">
+                        <h3>Add New Charge</h3>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem;">
+                            <div class="form-group">
+                                <label class="form-label">Service Name</label>
+                                <input type="text" class="form-input" placeholder="Enter service name">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Charge Type</label>
+                                <select class="form-input">
+                                    <option>Consultation</option>
+                                    <option>Surgery</option>
+                                    <option>Laboratory</option>
+                                    <option>Pharmacy</option>
+                                    <option>Emergency</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Standard Charge ($)</label>
+                                <input type="number" class="form-input" placeholder="0.00">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Tax Rate (%)</label>
+                                <input type="number" class="form-input" placeholder="0">
+                            </div>
+                        </div>
+                        <button class="btn btn-primary" style="margin-top: 1rem;">Add Charge</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Payments Tab -->
+            <div class="tab-content" id="payments">
+                <div class="medical-section">
+                    <div class="stats-grid">
+                        <div class="card">
+                            <h3>Total Payments</h3>
+                            <div style="font-size: 2rem; font-weight: bold; color: #28a745;">$430.55</div>
+                        </div>
+                        <div class="card">
+                            <h3>Outstanding Balance</h3>
+                            <div style="font-size: 2rem; font-weight: bold; color: #dc3545;">$815.25</div>
+                        </div>
+                        <div class="card">
+                            <h3>Last Payment</h3>
+                            <div style="font-size: 1.2rem; font-weight: bold;">06/05/2025</div>
+                        </div>
+                        <div class="card">
+                            <h3>Payment Method</h3>
+                            <div style="font-size: 1.2rem; font-weight: bold;">Credit Card</div>
+                        </div>
+                    </div>
+
+                    <div class="table-container">
+                        <div class="table-title">PAYMENT HISTORY</div>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Payment Date</th>
+                                    <th>Receipt No</th>
+                                    <th>Payment Method</th>
+                                    <th>Amount ($)</th>
+                                    <th>For Services</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>06/05/2025</td>
+                                    <td>RCP001245</td>
+                                    <td>Credit Card</td>
+                                    <td>136.80</td>
+                                    <td>Consultation Fee</td>
+                                    <td><span class="status-badge status-completed">Completed</span></td>
+                                    <td><button class="btn btn-primary" style="padding: 0.25rem 0.5rem; font-size: 0.8rem;">Receipt</button></td>
+                                </tr>
+                                <tr>
+                                    <td>01/05/2025</td>
+                                    <td>RCP001198</td>
+                                    <td>Cash</td>
+                                    <td>293.75</td>
+                                    <td>Pharmacy</td>
+                                    <td><span class="status-badge status-completed">Completed</span></td>
+                                    <td><button class="btn btn-primary" style="padding: 0.25rem 0.5rem; font-size: 0.8rem;">Receipt</button></td>
+                                </tr>
+                                <tr>
+                                    <td>15/04/2025</td>
+                                    <td>RCP001156</td>
+                                    <td>Insurance</td>
+                                    <td>240.00</td>
+                                    <td>Emergency Consultation</td>
+                                    <td><span class="status-badge status-pending">Processing</span></td>
+                                    <td><button class="btn btn-secondary" style="padding: 0.25rem 0.5rem; font-size: 0.8rem;">Track</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="table-container">
+                        <div class="table-title">OUTSTANDING INVOICES</div>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Invoice No</th>
+                                    <th>Invoice Date</th>
+                                    <th>Due Date</th>
+                                    <th>Services</th>
+                                    <th>Amount ($)</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>INV002456</td>
+                                    <td>06/05/2025</td>
+                                    <td>20/05/2025</td>
+                                    <td>Surgery - Tooth Extraction</td>
+                                    <td>531.00</td>
+                                    <td><span class="status-badge status-pending">Pending</span></td>
+                                    <td><button class="btn btn-success" style="padding: 0.25rem 0.5rem; font-size: 0.8rem;">Pay Now</button></td>
+                                </tr>
+                                <tr>
+                                    <td>INV002445</td>
+                                    <td>05/05/2025</td>
+                                    <td>19/05/2025</td>
+                                    <td>Lab Tests</td>
+                                    <td>168.00</td>
+                                    <td><span class="status-badge status-pending">Pending</span></td>
+                                    <td><button class="btn btn-success" style="padding: 0.25rem 0.5rem; font-size: 0.8rem;">Pay Now</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="card">
+                        <h3>Make Payment</h3>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem;">
+                            <div class="form-group">
+                                <label class="form-label">Invoice Number</label>
+                                <select class="form-input">
+                                    <option>INV002456 - $531.00</option>
+                                    <option>INV002445 - $168.00</option>
+                                    <option>Pay All Outstanding - $815.25</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Payment Method</label>
+                                <select class="form-input">
+                                    <option>Credit Card</option>
+                                    <option>Debit Card</option>
+                                    <option>Cash</option>
+                                    <option>Insurance</option>
+                                    <option>Bank Transfer</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Amount ($)</label>
+                                <input type="number" class="form-input" placeholder="0.00">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Reference Number</label>
+                                <input type="text" class="form-input" placeholder="Optional">
+                            </div>
+                        </div>
+                        <button class="btn btn-success" style="margin-top: 1rem;">Process Payment</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Live Consultation Tab -->
+            <div class="tab-content" id="live-consultation">
+                <div class="medical-section">
+                    <div class="stats-grid">
+                        <div class="card">
+                            <h3>Total Consultations</h3>
+                            <div style="font-size: 2rem; font-weight: bold; color: #4A90E2;">8</div>
+                        </div>
+                        <div class="card">
+                            <h3>This Month</h3>
+                            <div style="font-size: 2rem; font-weight: bold; color: #28a745;">2</div>
+                        </div>
+                        <div class="card">
+                            <h3>Average Duration</h3>
+                            <div style="font-size: 1.5rem; font-weight: bold;">25 min</div>
+                        </div>
+                        <div class="card">
+                            <h3>Next Session</h3>
+                            <div style="font-size: 1.2rem; font-weight: bold;">Tomorrow 2:00 PM</div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <h3>Current Consultation Session</h3>
+                        <div class="video-call-container">
+                            <div style="text-align: center;">
+                                <div style="font-size: 4rem; margin-bottom: 1rem;">📹</div>
+                                <div style="font-size: 1.2rem;">No active consultation</div>
+                                <div style="font-size: 1rem; opacity: 0.7;">Click "Start Consultation" to begin</div>
+                            </div>
+                            <div class="video-controls">
+                                <button class="video-btn" style="background: #28a745;">📞</button>
+                                <button class="video-btn" style="background: #6c757d;">🎤</button>
+                                <button class="video-btn" style="background: #6c757d;">📹</button>
+                                <button class="video-btn" style="background: #dc3545;">📞</button>
+                            </div>
+                        </div>
+                        <div style="display: flex; gap: 1rem; margin-top: 1rem;">
+                            <button class="btn btn-success">Start Consultation</button>
+                            <button class="btn btn-primary">Schedule Consultation</button>
+                            <button class="btn btn-secondary">Join Waiting Room</button>
+                        </div>
+                    </div>
+
+                    <div class="table-container">
+                        <div class="table-title">CONSULTATION HISTORY</div>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Date & Time</th>
+                                    <th>Doctor</th>
+                                    <th>Duration</th>
+                                    <th>Type</th>
+                                    <th>Status</th>
+                                    <th>Recording</th>
+                                    <th>Notes</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>06/05/2025 03:00 PM</td>
+                                    <td>Dr. Sonia Bush</td>
+                                    <td>22 min</td>
+                                    <td>Follow-up</td>
+                                    <td><span class="status-badge status-completed">Completed</span></td>
+                                    <td><button class="btn btn-primary" style="padding: 0.25rem 0.5rem; font-size: 0.8rem;">View</button></td>
+                                    <td><button class="btn btn-secondary" style="padding: 0.25rem 0.5rem; font-size: 0.8rem;">Notes</button></td>
+                                </tr>
+                                <tr>
+                                    <td>28/04/2025 10:30 AM</td>
+                                    <td>Dr. Sonia Bush</td>
+                                    <td>35 min</td>
+                                    <td>Initial Consultation</td>
+                                    <td><span class="status-badge status-completed">Completed</span></td>
+                                    <td><button class="btn btn-primary" style="padding: 0.25rem 0.5rem; font-size: 0.8rem;">View</button></td>
+                                    <td><button class="btn btn-secondary" style="padding: 0.25rem 0.5rem; font-size: 0.8rem;">Notes</button></td>
+                                </tr>
+                                <tr>
+                                    <td>07/05/2025 02:00 PM</td>
+                                    <td>Dr. Sonia Bush</td>
+                                    <td>-</td>
+                                    <td>Follow-up</td>
+                                    <td><span class="status-badge status-pending">Scheduled</span></td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="card">
+                        <h3>Schedule New Consultation</h3>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem;">
+                            <div class="form-group">
+                                <label class="form-label">Doctor</label>
+                                <select class="form-input">
+                                    <option>Dr. Sonia Bush - General Medicine</option>
+                                    <option>Dr. John Smith - Cardiology</option>
+                                    <option>Dr. Sarah Johnson - Pediatrics</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Consultation Type</label>
+                                <select class="form-input">
+                                    <option>Follow-up</option>
+                                    <option>Initial Consultation</option>
+                                    <option>Emergency Consultation</option>
+                                    <option>Second Opinion</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Date</label>
+                                <input type="date" class="form-input">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Time</label>
+                                <input type="time" class="form-input">
+                            </div>
+                        </div>
+                        <div class="form-group" style="margin-top: 1rem;">
+                            <label class="form-label">Reason for Consultation</label>
+                            <textarea class="form-input" rows="3" placeholder="Describe the reason for consultation"></textarea>
+                        </div>
+                        <button class="btn btn-primary" style="margin-top: 1rem;">Schedule Consultation</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Timeline Tab -->
+            <div class="tab-content" id="timeline">
+                <div class="medical-section">
+                    <div class="card">
+                        <h3>Patient Medical Timeline</h3>
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <div class="timeline-date">06/05/2025 - 08:30 PM</div>
+                                <div class="timeline-title">Tooth Extraction Surgery</div>
+                                <div>Successfully completed tooth extraction procedure. Patient tolerated procedure well. Post-operative instructions provided.</div>
+                            </div>
+                            
+                            <div class="timeline-item">
+                                <div class="timeline-date">06/05/2025 - 03:00 PM</div>
+                                <div class="timeline-title">Live Consultation</div>
+                                <div>Follow-up consultation with Dr. Sonia Bush. Discussed surgery preparation and post-operative care. Patient cleared for surgery.</div>
+                            </div>
+                            
+                            <div class="timeline-item">
+                                <div class="timeline-date">05/05/2025 - 09:00 AM</div>
+                                <div class="timeline-title">Lab Results Available</div>
+                                <div>Complete Blood Count results received. Hemoglobin: 12.5 g/dL (Normal), WBC: 11,200/μL (Slightly elevated), Platelets: Normal.</div>
+                            </div>
+                            
+                            <div class="timeline-item">
+                                <div class="timeline-date">04/05/2025 - 10:30 AM</div>
+                                <div class="timeline-title">Typhoid Test - Positive</div>
+                                <div>Typhoid IgM test returned positive. Treatment plan adjusted. Antibiotic therapy initiated.</div>
+                            </div>
+                            
+                            <div class="timeline-item">
+                                <div class="timeline-date">01/05/2025 - 02:00 PM</div>
+                                <div class="timeline-title">Medication Started</div>
+                                <div>Started on Alprovit (1 tablet twice daily) and BICASOL (0.5 tablet once daily). Patient education provided on medication compliance.</div>
+                            </div>
+                            
+                            <div class="timeline-item">
+                                <div class="timeline-date">28/04/2025 - 10:30 AM</div>
+                                <div class="timeline-title">Initial Consultation</div>
+                                <div>Patient presented with complaints of stomach pain and general malaise. Physical examination conducted. Lab tests ordered.</div>
+                            </div>
+                            
+                            <div class="timeline-item">
+                                <div class="timeline-date">15/04/2025 - 02:00 PM</div>
+                                <div class="timeline-title">Emergency Visit</div>
+                                <div>Patient brought to emergency department with severe abdominal pain. Diagnosed with acute gastritis. Emergency treatment provided.</div>
+                            </div>
+                            
+                            <div class="timeline-item">
+                                <div class="timeline-date">10/04/2025 - 09:00 AM</div>
+                                <div class="timeline-title">Patient Registration</div>
+                                <div>New patient registered in hospital system. Medical history documented. Insurance verification completed.</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <h3>Add Timeline Entry</h3>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem;">
+                            <div class="form-group">
+                                <label class="form-label">Entry Type</label>
+                                <select class="form-input">
+                                    <option>Consultation</option>
+                                    <option>Surgery</option>
+                                    <option>Lab Result</option>
+                                    <option>Medication</option>
+                                    <option>Emergency</option>
+                                    <option>Other</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Date & Time</label>
+                                <input type="datetime-local" class="form-input">
+                            </div>
+                        </div>
+                        <div class="form-group" style="margin-top: 1rem;">
+                            <label class="form-label">Title</label>
+                            <input type="text" class="form-input" placeholder="Enter timeline entry title">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Description</label>
+                            <textarea class="form-input" rows="3" placeholder="Enter detailed description of the event"></textarea>
+                        </div>
+                        <button class="btn btn-primary" style="margin-top: 1rem;">Add Entry</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Treatment History Tab -->
+            <div class="tab-content" id="treatment-history">
+                <div class="medical-section">
+                    <div class="stats-grid">
+                        <div class="card">
+                            <h3>Total Treatments</h3>
+                            <div style="font-size: 2rem; font-weight: bold; color: #4A90E2;">12</div>
+                        </div>
+                        <div class="card">
+                            <h3>Active Treatments</h3>
+                            <div style="font-size: 2rem; font-weight: bold; color: #28a745;">3</div>
+                        </div>
+                        <div class="card">
+                            <h3>Completed</h3>
+                            <div style="font-size: 2rem; font-weight: bold; color: #6c757d;">9</div>
+                        </div>
+                        <div class="card">
+                            <h3>Success Rate</h3>
+                            <div style="font-size: 2rem; font-weight: bold; color: #28a745;">94%</div>
+                        </div>
+                    </div>
+
+                    <div class="table-container">
+                        <div class="table-title">CURRENT TREATMENT PLANS</div>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Treatment Plan</th>
+                                    <th>Condition</th>
+                                    <th>Start Date</th>
+                                    <th>Expected End</th>
+                                    <th>Progress</th>
+                                    <th>Assigned Doctor</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Typhoid Fever Treatment</td>
+                                    <td>Typhoid Fever</td>
+                                    <td>01/05/2025</td>
+                                    <td>15/05/2025</td>
+                                    <td>
+                                        <div class="progress-bar">
+                                            <div class="progress-fill" style="width: 60%"></div>
+                                        </div>
+                                        60%
+                                    </td>
+                                    <td>Dr. Sonia Bush</td>
+                                    <td><span class="status-badge status-active">Active</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Post-Surgical Care</td>
+                                    <td>Tooth Extraction Recovery</td>
+                                    <td>06/05/2025</td>
+                                    <td>13/05/2025</td>
+                                    <td>
+                                        <div class="progress-bar">
+                                            <div class="progress-fill" style="width: 20%"></div>
+                                        </div>
+                                        20%
+                                    </td>
+                                    <td>Dr. Michael Brown</td>
+                                    <td><span class="status-badge status-active">Active</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Gastritis Management</td>
+                                    <td>Chronic Gastritis</td>
+                                    <td>15/04/2025</td>
+                                    <td>15/06/2025</td>
+                                    <td>
+                                        <div class="progress-bar">
+                                            <div class="progress-fill" style="width: 45%"></div>
+                                        </div>
+                                        45%
+                                    </td>
+                                    <td>Dr. Sonia Bush</td>
+                                    <td><span class="status-badge status-active">Active</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="table-container">
+                        <div class="table-title">TREATMENT HISTORY</div>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Treatment</th>
+                                    <th>Condition</th>
+                                    <th>Start Date</th>
+                                    <th>End Date</th>
+                                    <th>Duration</th>
+                                    <th>Outcome</th>
+                                    <th>Doctor</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Acute Gastritis Treatment</td>
+                                    <td>Acute Gastritis</td>
+                                    <td>15/04/2025</td>
+                                    <td>25/04/2025</td>
+                                    <td>10 days</td>
+                                    <td>Full Recovery</td>
+                                    <td>Dr. John Smith</td>
+                                    <td><span class="status-badge status-completed">Completed</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Vitamin Deficiency Treatment</td>
+                                    <td>Vitamin B12 Deficiency</td>
+                                    <td>01/03/2025</td>
+                                    <td>01/04/2025</td>
+                                    <td>31 days</td>
+                                    <td>Improved</td>
+                                    <td>Dr. Sonia Bush</td>
+                                    <td><span class="status-badge status-completed">Completed</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Respiratory Infection Treatment</td>
+                                    <td>Upper Respiratory Tract Infection</td>
+                                    <td>15/02/2025</td>
+                                    <td>25/02/2025</td>
+                                    <td>10 days</td>
+                                    <td>Full Recovery</td>
+                                    <td>Dr. Sarah Johnson</td>
+                                    <td><span class="status-badge status-completed">Completed</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="card">
+                        <h3>Treatment Effectiveness Chart</h3>
+                        <div class="chart-container">
+                            📊 Treatment Effectiveness Over Time
+                            <br><small>Chart showing patient response to various treatments</small>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <h3>Create New Treatment Plan</h3>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem;">
+                            <div class="form-group">
+                                <label class="form-label">Treatment Name</label>
+                                <input type="text" class="form-input" placeholder="Enter treatment plan name">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Condition</label>
+                                <input type="text" class="form-input" placeholder="Enter condition being treated">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Start Date</label>
+                                <input type="date" class="form-input">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Expected Duration (Days)</label>
+                                <input type="number" class="form-input" placeholder="14">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Assigned Doctor</label>
+                                <select class="form-input">
+                                    <option>Dr. Sonia Bush</option>
+                                    <option>Dr. John Smith</option>
+                                    <option>Dr. Sarah Johnson</option>
+                                    <option>Dr. Michael Brown</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Priority</label>
+                                <select class="form-input">
+                                    <option>Normal</option>
+                                    <option>High</option>
+                                    <option>Urgent</option>
+                                    <option>Critical</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group" style="margin-top: 1rem;">
+                            <label class="form-label">Treatment Description</label>
+                            <textarea class="form-input" rows="3" placeholder="Describe the treatment plan in detail"></textarea>
+                        </div>
+                        <button class="btn btn-primary" style="margin-top: 1rem;">Create Treatment Plan</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Tab Navigation
+        document.querySelectorAll('.nav-tab').forEach(tab => {
+            tab.addEventListener('click', function() {
+                const tabId = this.getAttribute('data-tab');
+                
+                // Remove active class from all tabs and content
+                document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+                document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+                
+                // Add active class to clicked tab and corresponding content
+                this.classList.add('active');
+                document.getElementById(tabId).classList.add('active');
+            });
+        });
+
+        // Collapsible Sections
+        function toggleCollapsible(header) {
+            const content = header.nextElementSibling;
+            const arrow = header.querySelector('span:last-child');
+            
+            if (content.classList.contains('active')) {
+                content.classList.remove('active');
+                arrow.textContent = '▼';
+            } else {
+                content.classList.add('active');
+                arrow.textContent = '▲';
+            }
+        }
+
+        // Table Sorting
+        function sortTable(header, columnIndex) {
+            const table = header.closest('table');
+            const tbody = table.querySelector('tbody');
+            const rows = Array.from(tbody.querySelectorAll('tr'));
+            
+            // Skip if no data rows or only placeholder row
+            if (rows.length <= 1 || rows[0].cells.length === 1) return;
+            
+            const isAscending = header.classList.contains('sort-asc');
+            
+            // Remove sort classes from all headers
+            table.querySelectorAll('th').forEach(th => {
+                th.classList.remove('sort-asc', 'sort-desc');
+            });
+            
+            // Add appropriate sort class
+            header.classList.add(isAscending ? 'sort-desc' : 'sort-asc');
+            
+            rows.sort((a, b) => {
+                const aText = a.cells[columnIndex].textContent.trim();
+                const bText = b.cells[columnIndex].textContent.trim();
+                
+                // Try to parse as numbers first
+                const aNum = parseFloat(aText.replace(/[^0-9.-]/g, ''));
+                const bNum = parseFloat(bText.replace(/[^0-9.-]/g, ''));
+                
+                if (!isNaN(aNum) && !isNaN(bNum)) {
+                    return isAscending ? bNum - aNum : aNum - bNum;
+                }
+                
+                // Fall back to string comparison
+                return isAscending ? bText.localeCompare(aText) : aText.localeCompare(bText);
+            });
+            
+            // Re-append sorted rows
+            rows.forEach(row => tbody.appendChild(row));
+        }
+
+        // Search Functionality
+        document.querySelector('.search-bar input').addEventListener('input', function(e) {
+            const searchTerm = e.target.value.toLowerCase();
+            console.log('Searching for:', searchTerm);
+        });
+
+        // Progress Bar Animation
+        window.addEventListener('load', function() {
+            setTimeout(() => {
+                document.querySelectorAll('.progress-fill').forEach(bar => {
+                    const width = bar.style.width;
+                    bar.style.width = '0%';
+                    setTimeout(() => {
+                        bar.style.width = width;
+                    }, 100);
+                });
+            }, 500);
+        });
+
+        // Action Button Handlers
+        document.querySelector('.action-icon:nth-child(2)').addEventListener('click', function() {
+            window.print();
+        });
+
+        document.querySelector('.action-icon:nth-child(3)').addEventListener('click', function() {
+            alert('Patient record saved successfully!');
+        });
+
+        document.querySelector('.action-icon:nth-child(1)').addEventListener('click', function() {
+            alert('Edit mode activated. In a real application, this would enable form editing.');
+        });
+
+        // Form Submissions (Demo)
+        document.addEventListener('click', function(e) {
+            if (e.target.classList.contains('btn-primary') || e.target.classList.contains('btn-success')) {
+                if (e.target.textContent.includes('Add') || e.target.textContent.includes('Schedule') || 
+                    e.target.textContent.includes('Create') || e.target.textContent.includes('Process') ||
+                    e.target.textContent.includes('Order')) {
+                    e.preventDefault();
+                    alert('Form submitted successfully! In a real application, this would save to the database.');
+                }
+            }
+        });
+
+        // Video Call Controls (Demo)
+        document.querySelectorAll('.video-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                alert('Video call feature activated. In a real application, this would connect to video service.');
+            });
+        });
+
+        // Mark Medication as Taken
+        document.addEventListener('click', function(e) {
+            if (e.target.textContent === 'Mark Taken') {
+                e.target.textContent = 'Taken';
+                e.target.classList.remove('btn-primary');
+                e.target.classList.add('btn-success');
+                e.target.disabled = true;
+            }
+        });
+    </script>
+</body>
+</html>
